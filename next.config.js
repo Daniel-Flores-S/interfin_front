@@ -3,7 +3,7 @@
 module.exports = {
 	env: {
 		API_APP_URL:
-			"http://localhost:8080",
+			"https://interfin-production.up.railway.app",
 		REDIRECT_URI:
 			"http://localhost:3000",
 	},
