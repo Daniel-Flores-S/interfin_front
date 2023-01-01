@@ -17,9 +17,12 @@ export const Review = (props: Props) => {
 		<Grid
 			container
 			sx={{
-				minHeight: "78vh",
+				minHeight: {
+					xs: "10vh",
+					md: "78vh",
+				},
 				width: "100%",
-				opacity: "1",				
+				opacity: "1",
 				background:
 					`url(${props.image}) center top / cover transparent`,
 				boxShadow: "none",
@@ -49,7 +52,7 @@ export const Review = (props: Props) => {
 						"auto",
 					marginRight:
 						"auto",
-					display: "flex",
+					display: { xs: "none", md: "flex" }, 
 					flexDirection:
 						"row",
 					paddingLeft:

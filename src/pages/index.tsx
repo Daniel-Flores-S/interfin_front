@@ -65,6 +65,10 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 							m={"0 auto"}
 							display="flex"
 							justifyContent={"center"}
+							p={{
+								xs: "2px 5px",
+								md: "0px 0px",
+							}}
 						>
 							<Grid item xs={12} md={7} >
 								<ExampleCarousel banners={banners} />
@@ -88,6 +92,10 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 									whiteSpace: "nowrap",
 									overflow: "hidden",
 									textOverflow: "ellipsis",
+									fontSize: {
+										xs: "1.2rem",
+										md: "inherit",
+									}
 								}}
 							>
 								Publicações
@@ -103,7 +111,16 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 								</Button>
 							</Link>
 						</Grid>
-						<Grid container xs={12} gap={2} justifyContent={"center"}>
+						<Grid
+							p={{
+								xs: "2px 7px",
+								md: "0px 0px",
+							}}
+							container
+							justifyContent={"center"}
+							xs={12}
+							gap={2}
+						>
 							{publication.map((item, key: number) => (
 								<RecipeReviewCard
 									publication={item}
