@@ -18,7 +18,7 @@ const Categories: NextPage<Props> = ({ categories }) => {
 			<GridContainer
 				container
 				sx={{
-					minHeight: "12vh",
+					minHeight: "30vh",
 				}}
 			/>
 			<Grid

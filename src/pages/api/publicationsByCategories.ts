@@ -10,7 +10,7 @@ const publicationsByCategories = async (req: NextApiRequest, res: NextApiRespons
     }
     catch (error) {
         const err = error as AxiosError;
-        return res.status(err.response?.status || 500).json(err.response?.data);
+        return res.status(err.response?.status || 500).json([]);
     }
 
 

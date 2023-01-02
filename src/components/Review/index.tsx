@@ -18,7 +18,7 @@ export const Review = (props: Props) => {
 			container
 			sx={{
 				minHeight: {
-					xs: "10vh",
+					xs: "30vh",
 					md: "78vh",
 				},
 				width: "100%",

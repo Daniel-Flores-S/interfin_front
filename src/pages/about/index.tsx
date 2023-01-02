@@ -1,19 +1,17 @@
-import {
-	Box,
-	Card,
-	CardContent,
-	CardMedia,
-	Grid,
-	Typography,
-} from "@mui/material";
+import React from "react";
+
+// @Types
 import type { GetServerSideProps, NextPage } from "next";
+
+// @mui
+import { Box, Card, CardContent, CardMedia, Grid, Typography, } from "@mui/material";
+
+// @Components
 import { GridContainer } from "../../components/GridContainer";
 import OurTeamCard from "../../components/OurTeamCard";
-import React from "react";
 
 
 const About: NextPage = () => {
-	//const isSSR = typeof window === 'undefined';
 	return (
 		<Grid container>
 			<GridContainer
@@ -53,17 +51,30 @@ const About: NextPage = () => {
 					<Box
 						minHeight={"80vh"}
 						m={"0 auto"}
-						p={"0 1rem"}
+						p={{
+							xs: "0",
+							md: "0 1rem",
+						}}
 						borderRadius={"10px"}
 						bgcolor={"#ffffff"}
+						mb={4}
 					>
 						<Card >
-							<CardContent sx={{ display: "flex", mb: '1.6rem' }}>
+							<CardContent sx={{
+								display: "flex",
+								mb: '1.6rem',
+								p: {
+									xs: "10px 0",
+									md: "0 1rem",
+								}
+							}}
+
+							>
 								<Box
 									sx={{
 										width: '100%',
 										maxWidth: '1158px',
-										margin: '0 auto'
+										margin: '1% auto'
 									}}
 								>
 
@@ -94,12 +105,16 @@ const About: NextPage = () => {
 										variant="body1"
 										component={"span"}
 										color="#677788"
+										textAlign="justify"
 									>
 										<Typography
 											variant="h3"
 											color="#262626"
 											mb={2}
-
+											textAlign={{
+												xs: "center",
+												md: "left",
+											}}
 										>
 											Nossa história
 										</Typography>
@@ -121,63 +136,46 @@ const About: NextPage = () => {
 									<Grid
 										container
 										xs={12}
+										textAlign={{
+											xs: "center",
+											md: "left",
+										}}
+										mt={4}
+										gap={2}
+										justifyContent="space-between"
 									>
-										<Grid
-											item
-											xs={12}
-											sm={12}
-											md={6}
-											lg={6}
-										>
+
+										<Grid item xs={12} textAlign="justify">
 											<Typography
 												variant="h5"
 												color="#262626"
 												mb={2}
-
+												textAlign={{
+													xs: "center",
+													md: "left",
+												}}
 											>
-												Nossa história
-											</Typography>
-											<Typography
-												variant="body1"
-												component={"p"}
-												color="#677788"
-											>
-												Nosso cadastro é simples. Exigimos apenas as informações básicas da sua empresa
-												e o tipo de armazenamento de dados que você deseja. Nossa inscrição é muito
-												simples. Exigimos apenas as informações básicas da sua empresa e o tipo de
-												armazenamento de dados que você deseja.
-											</Typography>
-
-										</Grid>
-										<Grid
-											item
-											xs={12}
-											sm={12}
-											md={6}
-											lg={6}
-										>
-											<Typography
-												variant="h5"
-												color="#262626"
-												mb={2}
-											>
-												Nossa história
+												Distribuição
 											</Typography>
 											<Typography
 												variant="body1"
 												color="#677788"
 												component={"p"}
+
 											>
-												Oferecemos suporte a upload em massa via SQL, integrações com a maioria dos produtos de
-												armazenamento de dados ou você pode usar nossa API. Basta selecionar para onde gostaria de
-												transferir seus dados e iniciaremos o processo de migração instantaneamente.
+												A distribuição de um site é o processo de torná-lo acessível na internet. Isso envolve a hospedagem do site em um servidor e a configuração de um domínio, que é o endereço pelo qual os usuários podem acessar o site.
+
+												Existem várias opções de hospedagem disponíveis, incluindo servidores compartilhados, VPS (Virtual Private Server) e servidores dedicados. Cada opção tem suas próprias vantagens e desvantagens, como preço, desempenho e recursos. É importante escolher a opção que melhor atenda às necessidades do seu site.
+
+												Além disso, é preciso registrar um domínio para o seu site. Isso pode ser feito através de um registrador de domínio, que é uma empresa que vende nomes de domínio. Existem várias extensões disponíveis, como .com, .net e .org, cada uma com suas próprias regras e restrições.
+
+												Uma vez que o site está hospedado e tem um domínio, ele estará disponível para ser acessado pelos usuários na internet. No entanto, é importante lembrar de continuar mantendo e atualizando o site para garantir que ele esteja sempre funcionando corretamente e fornecendo a melhor experiência possível para os usuários.
 											</Typography>
 										</Grid>
 									</Grid>
 								</Box>
 							</CardContent>
 						</Card>
-
 					</Box>
 					<OurTeamCard margin={"0"} />
 				</Box>
@@ -188,7 +186,7 @@ const About: NextPage = () => {
 
 export default About;
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	return {
 		props: {},
 	};

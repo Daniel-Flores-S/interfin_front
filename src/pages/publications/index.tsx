@@ -13,6 +13,7 @@ import Typography from "../../components/Typography";
 import { SimpleCategory } from "../../data/@types/SimpleCategory";
 import { SimplePublication } from "../../data/@types/SimplePublication";
 import { Link } from "../../components/Link";
+import { getPublicationsCategories } from "../../store/api/publication";
 export interface Root {
 	category: SimpleCategory,
 	publications: SimplePublication[]
@@ -117,10 +118,10 @@ const Publications: NextPage<Props> = ({ publication }) => {
 export default Publications;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const res = await fetch('http://localhost:3000/api/publicationsByCategories').then(res => res.json())
+	const res = await getPublicationsCategories()
 	return {
 		props: {
-			publication: res
+			publication: res ?? [],
 		},
 	};
 };

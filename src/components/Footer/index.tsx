@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import Typography from "../Typography";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
@@ -77,18 +77,19 @@ export default function AppFooter() {
 							}
 						>
 							<Link
-								href="/"
+								target="_blank"
+								href="https://wa.me/557781165042"
 								color={
 									"inherit"
 								}
 								sx={{
 									"&:hover":
-										{
-											color: "primary.main",
-										},
+									{
+										color: "primary.main",
+									},
 								}}
 							>
-								<FacebookIcon
+								<WhatsAppIcon
 									sx={{
 										width: 25,
 										height: 25,
@@ -96,15 +97,16 @@ export default function AppFooter() {
 								/>
 							</Link>
 							<Link
-								href="/"
+								target="_blank"
+								href="https://www.instagram.com/elleve.vitoriadaconquista/"
 								color={
 									"inherit"
 								}
 								sx={{
 									"&:hover":
-										{
-											color: "primary.main",
-										},
+									{
+										color: "primary.main",
+									},
 								}}
 							>
 								<InstagramIcon
@@ -115,18 +117,19 @@ export default function AppFooter() {
 								/>
 							</Link>
 							<Link
-								href="/"
+								target="_blank"
+								href="https://www.facebook.com/people/Elleve-Vitoria-da-Conquista-BA/100084598698393/"
 								color={
 									"inherit"
 								}
 								sx={{
 									"&:hover":
-										{
-											color: "primary.main",
-										},
+									{
+										color: "primary.main",
+									},
 								}}
 							>
-								<TwitterIcon
+								<FacebookIcon
 									sx={{
 										width: 25,
 										height: 25,
