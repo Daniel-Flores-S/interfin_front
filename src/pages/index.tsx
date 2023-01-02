@@ -202,6 +202,7 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
+	console.log('getServerSideProps', process.env.API_APP_URL)
 	const [publication, banners, recent] = await Promise.all([
 		getAllPublications(), getAllBanners(), getAllRecent()
 	])

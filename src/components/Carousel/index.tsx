@@ -1,14 +1,18 @@
-import Carousel from 'react-material-ui-carousel';
-import { DefaultSettingsT2 } from './Settings';
-import {
-    Card,
-    CardMedia,
-    Typography,
-    Grid,
-} from '@mui/material';
-import { PublicationType } from '../../data/@types/publication';
 import { FC } from 'react';
 import { useRouter } from 'next/router';
+
+// @Components
+import Carousel from 'react-material-ui-carousel';
+import { DefaultSettingsT2 } from './Settings';
+
+// @mui
+import { Card, CardMedia, Typography, Grid, } from '@mui/material';
+
+// @Types
+import { PublicationType } from '../../data/@types/publication';
+
+
+
 interface Props {
     banners: PublicationType[];
 }
@@ -43,7 +47,7 @@ export const ExampleCarousel: FC<Props> = ({ banners }) => {
                                             height: '100%',
                                             overflow: 'hidden',
                                             position: 'relative',
-                                            cursor:"pointer",
+                                            cursor: "pointer",
                                         }}
                                         image={item.image_url}
                                         title={item.title}
@@ -59,7 +63,6 @@ export const ExampleCarousel: FC<Props> = ({ banners }) => {
                                                 color: 'white',
                                                 opacity: 0.6,
                                                 width: '100%',
-                                                height: '10%',
                                             }}
                                             component={"div"}
                                         >
