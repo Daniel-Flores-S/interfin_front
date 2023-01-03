@@ -32,17 +32,17 @@ const App = (props: any) => {
 	//     })(window, document, 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js');
 	//   </script>
 
-	useEffect(() => {
-		const script = document.createElement('script');
-		script.src = 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js';
-		script.async = true;
-		console.log('adding script')
-		document.body.appendChild(script);
-		return () => {
-			console.log('removing script')
-			document.body.removeChild(script);
-		}
-	}, [])
+	// useEffect(() => {
+	// 	const script = document.createElement('script');
+	// 	script.src = 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js';
+	// 	script.async = true;
+	// 	console.log('adding script')
+	// 	document.body.appendChild(script);
+	// 	return () => {
+	// 		console.log('removing script')
+	// 		document.body.removeChild(script);
+	// 	}
+	// }, [])
 	
 
 
