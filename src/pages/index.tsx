@@ -67,7 +67,7 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 							justifyContent={"center"}
 							p={{
 								xs: "2px 5px",
-								md: "0px 0px",
+								md: "10px 5px",
 							}}
 						>
 							<Grid item xs={12} md={7} >

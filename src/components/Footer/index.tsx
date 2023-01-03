@@ -19,6 +19,10 @@ function Copyright() {
 				marginBottom: "1.5rem",
 				fontWeight: "bold",
 			}}
+			flexDirection={{
+				xs: "column",
+				sm: "row",
+			}}
 		>
 			<Link
 				color="inherit"
