@@ -25,25 +25,17 @@ const App = (props: any) => {
 
 	const getLayout = Component.getLayout ?? ((page: unknown) => page);
 
-	// 	<script>
-	//     (function (w, d, u) {
-	//       var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
-	//       var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
-	//     })(window, document, 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js');
-	//   </script>
 
-	// useEffect(() => {
-	// 	const script = document.createElement('script');
-	// 	script.src = 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js';
-	// 	script.async = true;
-	// 	console.log('adding script')
-	// 	document.body.appendChild(script);
-	// 	return () => {
-	// 		console.log('removing script')
-	// 		document.body.removeChild(script);
-	// 	}
-	// }, [])
-	
+	useEffect(() => {
+		const script = document.createElement('script');
+		script.src = 'https://cdn.bitrix24.com.br/b23629171/crm/tag/call.tracker.js';
+		script.async = true;
+		document.body.appendChild(script);
+		return () => {
+			document.body.removeChild(script);
+		}
+	}, [])
+
 
 
 	return (
