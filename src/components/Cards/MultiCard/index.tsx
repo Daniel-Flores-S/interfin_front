@@ -7,7 +7,7 @@ import {
     Avatar,
     Box,
 } from "@mui/material";
-import { PublicationType } from "../../data/@types/publication";
+import { PublicationType } from "../../../data/@types/publication";
 import moment from "moment";
 
 type Props = {
@@ -151,41 +151,42 @@ const MultiCard: React.FC<Props> = ({
                                 </React.Suspense>
                             )}
 
-                        <Box
-                            width={
-                                "100%"
-                            }
-                            sx={{
-                                height: {
-                                    xs: "17rem",
-                                    md: "31.25rem",
-                                    lg: "31.25rem",
-                                },
-                            }}
-                            display="flex"
-                            justifyContent={
-                                "center"
-                            }
-                            mt={5}
-                            bgcolor={
-                                "#262626"
-                            }
-                        >
-                            <iframe
-                                width="90%"
-                                height="100%"
-                                frameBorder="0"
-                                src={
-                                    publication?.video_url
+                        {Boolean(publication?.video_url) && (
+                            <Box
+                                width={
+                                    "100%"
                                 }
-                                style={{
-                                    borderRadius:
-                                        "8px",
+                                sx={{
+                                    height: {
+                                        xs: "17rem",
+                                        md: "31.25rem",
+                                        lg: "31.25rem",
+                                    },
                                 }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        </Box>
+                                display="flex"
+                                justifyContent={
+                                    "center"
+                                }
+                                mt={5}
+                                bgcolor={
+                                    "#262626"
+                                }
+                            >
+                                <iframe
+                                    width="90%"
+                                    height="100%"
+                                    frameBorder="0"
+                                    src={
+                                        publication?.video_url
+                                    }
+                                    style={{
+                                        borderRadius:
+                                            "8px",
+                                    }}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            </Box>)}
                     </Box>
                 </CardContent>
             </Card>

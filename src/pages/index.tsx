@@ -1,22 +1,24 @@
 import type { GetServerSideProps, NextPage } from "next";
 
-// @mui/material
+// @Mui/material
 import { Box } from "@mui/system";
 import { Button, Container, Grid } from "@mui/material";
 import { PublicationType } from "../data/@types/publication";
 import { getAllBanners, getAllPublications, getAllRecent } from "../store/api/publication";
 
-// @components
-import Typography from "../components/Typography";
-import { Review } from "../components/Review";
-import { ExampleCarousel } from "../components/Carousel";
-import ReviewCard from "../components/CardReview";
-import PublicationsCard from "../components/PublicationsCard";
-import RecipeReviewCard from "../components/RecipeReviewCard";
-import OurTeamCard from "../components/OurTeamCard";
-import { patternDT } from "../utils/pattern";
+// @Components
 import { Link } from "../components/Link";
-// import { GridContainer } from "../components/GridContainer";
+import { Review } from "../components/Review";
+import Typography from "../components/Typography";
+import ReviewCard from "../components/Cards/CardReview";
+import { ExampleCarousel } from "../components/Carousel";
+import OurTeamCard from "../components/Cards/OurTeamCard";
+import RecipeReviewCard from "../components/Cards/RecipeReviewCard";
+import PublicationsCard from "../components/Cards/PublicationsCard";
+
+// @Utils
+import { patternDT } from "../utils/pattern";
+
 type Props = {
 	publication: PublicationType[],
 	recent: PublicationType[],
@@ -27,7 +29,6 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 	return (
 		<Grid container xs={12}>
 			<Review
-				Click={() => console.log("Teste12")}
 				btnText={"Saiba mais"}
 				image="/static/img/bg3.jpg"
 				title="Sua história começa conosco."
@@ -202,7 +203,6 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	console.log('getServerSideProps', process.env.API_APP_URL)
 	const [publication, banners, recent] = await Promise.all([
 		getAllPublications(), getAllBanners(), getAllRecent()
 	])

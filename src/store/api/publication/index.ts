@@ -91,6 +91,5 @@ export const getPublicationsCategories = async () => {
 
 	const response = await fetch(`${process.env.API_APP_URL}/publication/Blog/AllCategory`);
 
-	console.log(response)
 	return await response.json() ?? [];
 }

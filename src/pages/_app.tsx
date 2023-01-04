@@ -1,20 +1,27 @@
+import { useEffect } from "react";
+
+// @moment
+import 'moment/locale/pt-br'
+import moment from "moment";
+
+// @Theme and Utils
+import { theme } from "../theme";
+import { createEmotionCache } from "../utils/create-emotion-cache";
+
+// @components
+import ResponsiveAppBar from "../components/ResponsiveAppBar";
+import HeadComponent from "../components/Head";
+import Footer from "../components/Footer";
+
+// @Mui 
 import { CacheProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { createEmotionCache } from "../utils/create-emotion-cache";
-import { theme } from "../theme";
-import { AuthProvider } from "../contexts/AuthContext";
-import HeadComponent from "../components/Head";
 
-import ResponsiveAppBar from "../components/ResponsiveAppBar";
-import Footer from "../components/Footer";
-import moment from "moment";
-import 'moment/locale/pt-br'
-import { useEffect } from "react";
+moment.locale('pt-br')
 
 const clientSideEmotionCache = createEmotionCache();
 
-moment.locale('pt-br')
 
 const App = (props: any) => {
 	const {
@@ -39,27 +46,16 @@ const App = (props: any) => {
 
 
 	return (
-		<CacheProvider
-			value={emotionCache}
-		>
-			<HeadComponent
-				title={"Interfin"}
-			/>
-			<ThemeProvider
-				theme={theme}
-			>
-				<AuthProvider>
-					<CssBaseline />
-					<ResponsiveAppBar />
-					{
-						getLayout(
-							<Component
-								{...pageProps}
-							/>,
-						)}
-					<Footer />
-
-				</AuthProvider>
+		<CacheProvider value={emotionCache}>
+			<HeadComponent title={"Interfin"} />
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<ResponsiveAppBar />
+				{
+					getLayout(
+						<Component {...pageProps} />,
+					)}
+				<Footer />
 			</ThemeProvider>
 		</CacheProvider>
 	);

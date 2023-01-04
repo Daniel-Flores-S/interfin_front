@@ -5,16 +5,11 @@ import Router from "next/router";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-// components and utils
+// @Utils
 import Typography from "../Typography";
-import { categories } from "../../data/@types/categories";
-import { ImageIconButton, ImageBackdrop, } from "./utils";
+import * as UT from "./utils";
 
-type Props = {
-	categories: categories[],
-}
-
-const ProductCategories: React.FC<Props> = ({ categories }) => {
+const ProductCategories: React.FC<UT.PropsProductCategories> = ({ categories }) => {
 
 	return (
 		<Container
@@ -37,13 +32,13 @@ const ProductCategories: React.FC<Props> = ({ categories }) => {
 				}}
 			>
 				{categories?.map((item) => (
-					<ImageIconButton
+					<UT.ImageIconButton
 						key={
 							item.id
 						}
 						onClick={() => Router.push(`/publications/category/${item.id}`)}
 						style={{
-							width:  (Math.random() * 9.83 + 23.5)+ '%',
+							width: (Math.random() * 9.83 + 23.5) + '%',
 							flexGrow: 1,
 						}}
 					>
@@ -62,7 +57,7 @@ const ProductCategories: React.FC<Props> = ({ categories }) => {
 								backgroundImage: `url(${item.image})`,
 							}}
 						/>
-						<ImageBackdrop className="imageBackdrop" />
+						<UT.ImageBackdrop className="imageBackdrop" />
 						<Box
 							sx={{
 								position:
@@ -90,7 +85,7 @@ const ProductCategories: React.FC<Props> = ({ categories }) => {
 								<div className="imageMarked" />
 							</Typography>
 						</Box>
-					</ImageIconButton>
+					</UT.ImageIconButton>
 				))}
 			</Box>
 		</Container>

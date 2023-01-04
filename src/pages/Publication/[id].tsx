@@ -1,7 +1,12 @@
-import { Grid, } from "@mui/material";
 import type { GetServerSideProps, NextPage } from "next";
+
+// @mui/material
+import { Grid, } from "@mui/material";
+
+
+// @components
 import { GridContainer } from "../../components/GridContainer";
-import MultiCard from "../../components/MultiCard";
+import MultiCard from "../../components/Cards/MultiCard";
 import { PublicationType } from "../../data/@types/publication";
 import { getPublicationById } from "../../store/api/publication";
 
@@ -9,7 +14,6 @@ type Props = {
 	publication: PublicationType,
 }
 const Publication: NextPage<Props> = ({ publication }) => {
-	console.log("publication: ", publication)
 	return (
 		<Grid container>
 			<GridContainer container sx={{ minHeight: "30vh", }} />

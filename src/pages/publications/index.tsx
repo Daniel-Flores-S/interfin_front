@@ -4,16 +4,17 @@ import type { GetServerSideProps, NextPage } from "next";
 import { Box } from "@mui/system";
 import { Button, Container, Grid, } from "@mui/material";
 
-// components
-import CategoryCard from "../../components/CategoryCard";
+// @components
+import CategoryCard from "../../components/Cards/CategoryCard";
 import { GridContainer } from "../../components/GridContainer";
 import Typography from "../../components/Typography";
+import { Link } from "../../components/Link";
 
-// types
+// @types and requests
 import { SimpleCategory } from "../../data/@types/SimpleCategory";
 import { SimplePublication } from "../../data/@types/SimplePublication";
-import { Link } from "../../components/Link";
 import { getPublicationsCategories } from "../../store/api/publication";
+
 export interface Root {
 	category: SimpleCategory,
 	publications: SimplePublication[]

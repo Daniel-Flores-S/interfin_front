@@ -1,18 +1,14 @@
-import { Button, Grid, Typography } from "@mui/material";
 import * as React from "react";
+
+// @mui/material
 import AddIcon from "@mui/icons-material/Add";
+import { Button, Grid, Typography } from "@mui/material";
 
+// @Utils
+import * as UT from "./utils";
 
-
-type Props = {
-	image?: string;
-	title?: string;
-	subTitle?: string;
-	btnText?: string;
-	Click: () => void;
-};
-
-export const Review = (props: Props) => {
+export const Review: React.FC<UT.PropsReview> = (props) => {
+	const { image, title, subTitle, btnText, Click } = props;
 	return (
 		<Grid
 			container
@@ -24,7 +20,7 @@ export const Review = (props: Props) => {
 				width: "100%",
 				opacity: "1",
 				background:
-					`url(${props.image}) center top / cover transparent`,
+					`url(${image}) center top / cover transparent`,
 				boxShadow: "none",
 				display: "grid",
 				"::before": {
@@ -52,7 +48,7 @@ export const Review = (props: Props) => {
 						"auto",
 					marginRight:
 						"auto",
-					display: { xs: "none", md: "flex" }, 
+					display: { xs: "none", md: "flex" },
 					flexDirection:
 						"row",
 					paddingLeft:
@@ -109,7 +105,7 @@ export const Review = (props: Props) => {
 							},
 						}}
 					>
-						{props?.title}
+						{title}
 					</Typography>
 					<Typography
 						variant="subtitle1"
@@ -124,12 +120,12 @@ export const Review = (props: Props) => {
 							},
 						}}
 					>
-						{props.subTitle}
+						{subTitle}
 					</Typography>
 					<Button
 						variant="contained"
 						color="primary"
-						onClick={props.Click}
+						onClick={Click}
 						sx={{
 							marginTop:
 							{
@@ -147,7 +143,7 @@ export const Review = (props: Props) => {
 							<AddIcon />
 						}
 					>
-						{props.btnText}
+						{btnText}
 					</Button>
 				</Grid>
 			</Grid>

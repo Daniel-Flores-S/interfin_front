@@ -4,8 +4,8 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Grid, Box, Divider } from "@mui/material";
-import { PublicationType } from "../../data/@types/publication";
-import { Link } from "../Link";
+import { PublicationType } from "../../../data/@types/publication";
+import { Link } from "../../Link";
 
 type Props = { recent: PublicationType[] };
 

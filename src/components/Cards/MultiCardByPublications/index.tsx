@@ -1,15 +1,15 @@
 import * as React from "react";
 
-// @mui/material
+// @Mui
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Box, Pagination, Stack, } from "@mui/material";
 
-// components and styles
-import Typography from "../Typography";
-import { PublicationByCategory } from "../../data/@types/publication";
+// @Components and Styles
+import Typography from "../../Typography";
+import { PublicationByCategory } from "../../../data/@types/publication";
 import PublicationsCard from "../PublicationsCard";
-import { getAllCategoryById } from "../../store/api/publication";
+import { getAllCategoryById } from "../../../store/api/publication";
 
 type Props = {
     publication: PublicationByCategory;

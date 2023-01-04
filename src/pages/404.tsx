@@ -1,11 +1,10 @@
 import NextLink from "next/link";
-import {
-	Box,
-	Button,
-	Container,
-	Typography,
-} from "@mui/material";
+
+// @mui/material
+import { Box, Button, Container, Typography, } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
+// @components
 import HeadComponent from "../components/Head";
 
 const NotFound = () => (

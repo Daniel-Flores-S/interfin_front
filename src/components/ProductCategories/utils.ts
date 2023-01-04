@@ -1,6 +1,10 @@
 import ButtonBase from "@mui/material/ButtonBase";
 import { styled } from "@mui/material/styles";
+import { categories } from "../../data/@types/categories";
 
+export type PropsProductCategories = {
+	categories: categories[],
+}
 export const ImageBackdrop = styled(
 	"div",
 )(({ theme }) => ({

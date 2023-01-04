@@ -1,8 +1,9 @@
-import {
-	Box,
-	Grid,
-} from "@mui/material";
 import type { GetServerSideProps, NextPage } from "next";
+
+// @Mui
+import { Box, Grid, } from "@mui/material";
+
+// @Mui
 import ProductCategories from "../../components/ProductCategories";
 import { GridContainer } from "../../components/GridContainer";
 import { categories } from "../../data/@types/categories";
@@ -39,7 +40,7 @@ const Categories: NextPage<Props> = ({ categories }) => {
 					minHeight={"200vh"}
 					margin={"0 auto"}
 				>
-					<ProductCategories categories={categories}/>
+					<ProductCategories categories={categories} />
 				</Box>
 			</Grid>
 		</Grid>
@@ -49,11 +50,9 @@ const Categories: NextPage<Props> = ({ categories }) => {
 export default Categories;
 
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const categories = await GetCategories()
-
-
-
+	
 	return {
 		props: { categories: categories || [] },
 	};

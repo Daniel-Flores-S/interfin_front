@@ -8,7 +8,7 @@ import { Box, Card, CardContent, CardMedia, Grid, Typography, } from "@mui/mater
 
 // @Components
 import { GridContainer } from "../../components/GridContainer";
-import OurTeamCard from "../../components/OurTeamCard";
+import OurTeamCard from "../../components/Cards/OurTeamCard";
 
 
 const About: NextPage = () => {

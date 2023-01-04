@@ -7,25 +7,20 @@ import { Chip, Grid, } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 import moment from "moment";
-import { Link } from "../Link";
-import { PublicationType } from "../../data/@types/publication";
+import { Link } from "../../Link";
+import { SimplePublication } from "../../../data/@types/SimplePublication";
 
 type Props = {
-	publication: PublicationType,
+	publication: SimplePublication,
 }
 
-const RecipeReviewCard: React.FC<Props> = ({ publication }) => {
-
-	const { id, title, image_url,  createdAt } = publication;
+const CategoryCard: React.FC<Props> = ({ publication }) => {
+	const { title, createdAt, id, user, image_url, category } = publication;
 	return (
 		<Card
 			sx={{
-				maxWidth: {
-					xs: "100%",
-					md: 380,
-				},
-				backgroundColor:
-					"rgb(255, 255, 255)",
+				width: "100%",
+				backgroundColor: "rgb(255, 255, 255)",
 				color: "rgb(30, 32, 34)",
 				transition:
 					"box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
@@ -48,38 +43,12 @@ const RecipeReviewCard: React.FC<Props> = ({ publication }) => {
 				<Grid
 					item
 					xs={12}
-					sx={{
-						textAlign:
-							"center",
-					}}
+					textAlign="center"
 				>
-					<Grid
-						item
-						xs={12}
-						sx={{
-							display:
-								"flex",
-							flexFlow:
-								"row wrap",
-							alignItems:
-								"center",
-							justifyContent:
-								"center",
-							gap: "16px",
-							lineHeight:
-								"1.5",
-							paddingBottom:
-								"16px",
-						}}
-					>
+					<Grid item xs={12} paddingBottom={2}>
 						<Chip
 							size="small"
-							onClick={() => {
-								console.log(
-									"clicked",
-								);
-							}}
-							label="Projeto"
+							label={category}
 							color="primary"
 						/>
 					</Grid>
@@ -87,9 +56,9 @@ const RecipeReviewCard: React.FC<Props> = ({ publication }) => {
 						variant="body2"
 						component={"p"}
 					>
-						Clara Bertoletti
+						{user}
 						- {createdAt ? moment(createdAt).format("MM-YYYY") : ""}
-					</Typography>					
+					</Typography>
 					<Link
 						href={`/Publication/${id}`}
 						style={{
@@ -116,4 +85,4 @@ const RecipeReviewCard: React.FC<Props> = ({ publication }) => {
 	);
 }
 
-export default RecipeReviewCard
+export default CategoryCard

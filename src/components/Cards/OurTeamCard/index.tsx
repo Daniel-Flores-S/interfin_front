@@ -1,6 +1,6 @@
 import { Box, Stack, Grid } from '@mui/material';
 import { FC } from 'react';
-import Typography from '../Typography';
+import Typography from '../../Typography';
 import { PublishingEditor } from './Columnist';
 type Props = {
     margin?: string

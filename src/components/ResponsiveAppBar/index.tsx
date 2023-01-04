@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 
+// @Mui
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -13,39 +14,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
-
 import { Container } from '@mui/material';
+
+// @Utils
+import * as UT from './utils';
 import { Link } from '../Link';
 
-// @Icons
-import CategoryIcon from '@mui/icons-material/Category';
-import GridViewIcon from "@mui/icons-material/GridView";
-import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
-
-import { AppBarProps, drawerWidth } from './utils';
-
-export const ItemsPage = [
-	{
-		icon: <GridViewIcon />,
-		label: "Publicações",
-		url: "/publications",
-	},
-	{
-		icon: <CategoryIcon />,
-		label: "Categorias",
-		url: "/categories",
-	},
-	{
-		icon: <SlowMotionVideoIcon />,
-		label: "Sobre",
-		url: "/about",
-	},
-];
 
 
 
-const MenuAppBar: FC<AppBarProps> = ({ windowApp }) => {
+
+const MenuAppBar: FC<UT.AppBarProps> = ({ windowApp }) => {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [scrollY, setScrollY] = useState(0);
 
@@ -152,7 +131,7 @@ const MenuAppBar: FC<AppBarProps> = ({ windowApp }) => {
 							</Typography>
 						</Link>
 						<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-							{ItemsPage.map((item, key) => (
+							{UT.ItemsPage.map((item, key) => (
 								<Link href={`${item.url}`} >
 									<Button
 										key={key}
@@ -183,7 +162,7 @@ const MenuAppBar: FC<AppBarProps> = ({ windowApp }) => {
 					}}
 					sx={{
 						display: { xs: 'block', sm: 'none' },
-						'& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+						'& .MuiDrawer-paper': { boxSizing: 'border-box', width: UT.drawerWidth },
 					}}
 				>
 					{drawer(handleDrawerToggle)}
@@ -210,7 +189,7 @@ const drawer = (handleDrawerToggle: () => void) => {
 
 			<Divider />
 			<List>
-				{ItemsPage.map((item, key) => (
+				{UT.ItemsPage.map((item, key) => (
 					<ListItem key={key} disablePadding>
 						<ListItemButton sx={{ textAlign: 'center' }}>
 							<Link href={`${item.url}`} >

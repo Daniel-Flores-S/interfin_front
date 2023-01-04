@@ -1,5 +1,5 @@
 import { Avatar, Box, Stack, Button } from "@mui/material";
-import Typography from "../../Typography";
+import Typography from "../../../Typography";
 interface ColumnistProps {
     image: string;
     name: string;

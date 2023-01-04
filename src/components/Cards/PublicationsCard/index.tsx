@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 
 import moment from "moment";
-import { Link } from "../Link";
-import Typography from "../Typography";
+import { Link } from "../../Link";
+import Typography from "../../Typography";
 
 type Props = {
 	id?: string;
@@ -31,7 +31,7 @@ const Publications: FC<Props> = ({
 }) => {
 	const matches = useMediaQuery(
 		"(max-width:570px)",
-	);	
+	);
 
 	return (
 		<Container
@@ -97,31 +97,17 @@ const Publications: FC<Props> = ({
 						>
 							<Chip
 								size="small"
-								onClick={() => {
-									console.log(
-										"clicked",
-									);
-								}}
 								label="Projeto"
 								color="primary"
 							/>
 							<Chip
 								size="small"
-								onClick={() => {
-									console.log(
-										"clicked",
-									);
-								}}
 								label="Temas"
 								color="primary"
 							/>
 							<Chip
 								size="small"
-								onClick={() => {
-									console.log(
-										"clicked",
-									);
-								}}
+
 								label="Fotografia"
 								color="primary"
 							/>
