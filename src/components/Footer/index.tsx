@@ -7,6 +7,7 @@ import Typography from "../Typography";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Image from "next/image";
 
 function Copyright() {
 	return (
@@ -57,6 +58,13 @@ export default function AppFooter() {
 				}}
 			>
 				<Grid container>
+					<Grid
+						item
+						xs={12}
+						mb={3}
+					>
+						<Image src="/static/images/avatars/#02LogotipoPrincipal2.png" alt="Logotipo Interfin" width={10} height={10} />
+					</Grid>
 					<Grid
 						item
 						xs={12}

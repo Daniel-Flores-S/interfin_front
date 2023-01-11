@@ -17,6 +17,7 @@ import Footer from "../components/Footer";
 import { CacheProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import ServiceWhatsApp from "../components/ServiceWhatsApp";
 
 moment.locale('pt-br')
 
@@ -55,6 +56,7 @@ const App = (props: any) => {
 					getLayout(
 						<Component {...pageProps} />,
 					)}
+				<ServiceWhatsApp />
 				<Footer />
 			</ThemeProvider>
 		</CacheProvider>
