@@ -19,6 +19,7 @@ import { Container } from '@mui/material';
 // @Utils
 import * as UT from './utils';
 import { Link } from '../Link';
+import Image from 'next/image';
 
 
 
@@ -104,31 +105,17 @@ const MenuAppBar: FC<UT.AppBarProps> = ({ windowApp }) => {
 							<MenuIcon />
 						</IconButton>
 						<Link href={`/`}>
-							<Typography
-								variant="h6"
-								noWrap
-								sx={{
-									mr: 2,
-									display: {
-										xs: "none",
-										md: "flex",
-									},
-									position:
-										"relative",
-									color: scrollY === 0 ? "#fff" : "#555",
-									height: "50px",
-									fontSize:
-										"1.125rem",
-									lineHeight:
-										"30px",
-									padding:
-										"0.625rem 0",
-									textDecoration:
-										"none",
-								}}
-							>
-								INTERFIN
-							</Typography>
+								<Image
+									src={scrollY === 0 ? "/static/images/LogotipoInterfinPrincipal1.png" : "/static/images/LogotipoInterfinAlternativo.png"}
+									alt="logo"
+									width={100}
+									height={50}
+									style={{ 
+										cursor: "pointer",
+										marginTop: "10px",
+										width: '94px'
+									}}
+								/>
 						</Link>
 						<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 							{UT.ItemsPage.map((item, key) => (

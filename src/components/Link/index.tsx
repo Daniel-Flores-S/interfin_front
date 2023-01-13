@@ -2,7 +2,7 @@ import NextLink from "next/link";
 
 interface LinkProps {
 	href: string;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	style?: React.CSSProperties;
 	color?:
 	| "inherit"

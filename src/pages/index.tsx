@@ -30,12 +30,9 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 		<Grid container xs={12}>
 			<Review
 				btnText={"Saiba mais"}
-				image="/static/img/bg3.jpg"
-				title="Sua história começa conosco."
-				subTitle="Cada página de destino precisa de uma pequena descrição
-				após o grande título em negrito, por isso dicionamos este texto
-				aqui. Adicione aqui todas as informações que podem fazer com que você
-				ou seu produto criem a primeira impressão."
+				image="/static/images/newbg1.jpg"
+				title="Seja bem-vindo(a) à Interfin!"
+				subTitle="Na Interfin, oferecemos crédito personalizado, sem burocracia, para atender suas necessidades financeiras únicas, seja para realizar um sonho, quitar uma dívida ou qualquer outra finalidade."
 			/>
 			<Grid
 				item
@@ -122,11 +119,8 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 							xs={12}
 							gap={2}
 						>
-							{publication.map((item, key: number) => (
-								<RecipeReviewCard
-									publication={item}
-									key={key}
-								/>
+							{publication.map((item) => (
+								<RecipeReviewCard publication={item} />
 							))}
 						</Grid>
 
@@ -163,10 +157,8 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 										fontSize: "1.25rem",
 									}}
 								>
-									Fique por
-									dentro do
-									que estamos
-									trabalhando!
+									Fique por dentro do
+									que estamos trabalhando!
 								</Typography>
 							</Container>
 						</Grid>
@@ -174,7 +166,6 @@ const Home: NextPage<Props> = ({ publication, banners, recent }) => {
 							return (
 								!item.isBanners
 								&& <PublicationsCard
-									key={key}
 									id={item.id}
 									reverse={Boolean(key % 2 === 0)}
 									image={item.image_url}

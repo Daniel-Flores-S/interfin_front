@@ -3,6 +3,7 @@ import React from "react";
 import CategoryIcon from '@mui/icons-material/Category';
 import GridViewIcon from "@mui/icons-material/GridView";
 import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 export interface AppBarProps {
 	windowApp?: () => Window;
@@ -20,6 +21,11 @@ export const ItemsPage = [
 		icon: <CategoryIcon />,
 		label: "Categorias",
 		url: "/categories",
+	},
+	{
+		icon: <AccountBalanceIcon />,
+		label: "Contato",
+		url: "/",
 	},
 	{
 		icon: <SlowMotionVideoIcon />,

@@ -15,7 +15,7 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 			sx={{
 				minHeight: {
 					xs: "30vh",
-					md: "78vh",
+					md: "75vh",
 				},
 				width: "100%",
 				opacity: "1",
@@ -101,7 +101,7 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 							fontSize:
 							{
 								xs: "1.5rem",
-								md: "3rem",
+								md: "2.2rem",
 							},
 						}}
 					>
@@ -132,8 +132,7 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 								xs: "0",
 								md: "24px",
 							},
-							padding:
-								"12px 45px",
+							padding: "12px 45px",
 							width: {
 								xs: "100%",
 								md: "fit-content",

@@ -179,12 +179,12 @@ export const theme = createTheme({
 				"rgba(55, 65, 81, 0.26)",
 		},
 		background: {
-			default: "#F9FAFC",
-			paper: "#FFFFFF",
+			default: "#252525",
+			paper: "#252525",
 		},
 		divider: "#E6E8F0",
 		primary: {
-			main: "#42AF59",
+			main: "#0a9e84",
 			light: "#828DF8",
 			dark: "#177c3e",
 			contrastText: "#FFFFFF",
