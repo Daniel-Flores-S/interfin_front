@@ -18,6 +18,7 @@ import { CacheProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import ServiceWhatsApp from "../components/ServiceWhatsApp";
+import AppBarMenu from "../components/AppBar";
 
 moment.locale('pt-br')
 
@@ -51,7 +52,7 @@ const App = (props: any) => {
 			<HeadComponent title={"Interfin"} />
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<ResponsiveAppBar />
+				<AppBarMenu />
 				{
 					getLayout(
 						<Component {...pageProps} />,
