@@ -1,9 +1,14 @@
-import { Avatar, Box, Stack, Button } from "@mui/material";
+import { Box, Stack, Button, Link } from "@mui/material";
 import Typography from "../../../Typography";
+
 interface ColumnistProps {
     image: string;
     name: string;
     description: string;
+    description2: string;
+    Link: string;
+    iframe: JSX.Element;
+
 }
 
 export const PublishingEditor: React.FC<ColumnistProps> = (props) => {
@@ -25,17 +30,20 @@ export const PublishingEditor: React.FC<ColumnistProps> = (props) => {
                 sx={{ maxWidth: 345 }}
                 justifyContent={"center"}
             >
-                <Avatar
-                    src={props.image}
-                    alt={props.name}
+                <Box
                     sx={{
                         width: "200px",
                         height: "200px",
-                        objectFit: "cover",
-                        objectPosition: "50% 50%",
+                        backgroundColor: "transparent",
+                        // position: "relative",
+                        // clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"
                     }}
 
-                />
+                >
+                    {/* iframe */}
+                    {props.iframe}
+
+                </Box>
                 <Stack
                     width="90%"
                     spacing={1}
@@ -45,22 +53,29 @@ export const PublishingEditor: React.FC<ColumnistProps> = (props) => {
                     <Typography
                         variant="subtitle1"
                         fontWeight={600}
-                        color={"primary"}
+                        color={"#F3A424"}
                     >
                         {props.name}
                     </Typography>
-                    <Typography
-                        variant="body2"
+                    <Link
+                        target="_blank"
+                        href={props.Link}
+                        sx={{
+                            textDecoration: "none",
+                        }}
                     >
-                        {props.description}
-                    </Typography>
-                    <Button
-                        variant="contained"
-                        size="small"
-                        sx={{ width: "100px" }}
-                    >
-                        Seguir
-                    </Button>
+                        <Button
+                            variant="contained"
+                            color="warning"
+                            size="small"
+                            sx={{
+                                width: "100px",
+                                color: "#000000"
+                            }}
+                        >
+                            Saiba mais
+                        </Button>
+                    </Link>
                 </Stack>
             </Stack>
         </Box>

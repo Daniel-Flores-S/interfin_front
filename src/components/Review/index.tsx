@@ -1,21 +1,22 @@
 import * as React from "react";
 
 // @mui/material
-import AddIcon from "@mui/icons-material/Add";
-import { Button, Grid, Typography } from "@mui/material";
+// import AddIcon from "@mui/icons-material/Add";
+import { Grid } from "@mui/material";
+// import { Button, Grid, Typography } from "@mui/material";
 
 // @Utils
 import * as UT from "./utils";
 
-export const Review: React.FC<UT.PropsReview> = (props) => {
-	const { image, title, subTitle, btnText, Click } = props;
+export const Review: React.FC<UT.PropsReview> = ({ image }) => {
+	//const { image, title, subTitle, btnText, Click, subText } = props;
 	return (
 		<Grid
 			container
 			sx={{
 				minHeight: {
 					xs: "30vh",
-					md: "75vh",
+					md: "80vh",
 				},
 				width: "100%",
 				opacity: "1",
@@ -24,8 +25,6 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 				boxShadow: "none",
 				display: "grid",
 				"::before": {
-					background:
-						"linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%)",
 					content: '""',
 					height: "100%",
 					left: "0",
@@ -64,7 +63,7 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 					maxWidth: "1300px !important",
 				}}
 			>
-				<Grid
+				{/* <Grid
 					item
 					sx={{
 						width: {
@@ -90,9 +89,9 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 					}}
 				>
 					<Typography
-						variant="h2"
+						variant="h6"
 						sx={{
-							color: "#ffffff",
+							color: "#F3A424",
 							textAlign:
 							{
 								xs: "center",
@@ -120,7 +119,7 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 							},
 						}}
 					>
-						{subTitle}
+						{subText}
 					</Typography>
 					<Button
 						variant="contained"
@@ -143,8 +142,8 @@ export const Review: React.FC<UT.PropsReview> = (props) => {
 						}
 					>
 						{btnText}
-					</Button>
-				</Grid>
+					</Button> */}
+				{/* </Grid> */}
 			</Grid>
 		</Grid>
 	);
