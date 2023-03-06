@@ -1,5 +1,4 @@
 import { AxiosError } from "axios";
-import { userType } from "../../../data/@types/user";
 import { ApiService } from "../../../data/service/Api.Service";
 
 export const accessControl =
