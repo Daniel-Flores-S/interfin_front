@@ -86,31 +86,24 @@ const Home: NextPage<Props> = ({ /*publication, recent, */banners }) => {
 						</Typography>
 						<CarouselNews banners={banners} />
 					</Box>
-					<Box
-						bgcolor={"#ffc115"}
-						sx={{
-							padding: '3px 0px',
-						}}
-					/>
 				</Box>
 				<Box
+					bgcolor={"#ffc115"}
+					sx={{
+						padding: '3px 0px',
+					}}
+				/>
+				<Box
 					width={"100%"}
-					bgcolor={'linear-gradient(205.81deg, #242424 -7.09%, #0D0D0D 48.6%)'}
+					bgcolor={"#000000"}
 				>
-
 					<Box
-						borderRadius={'4'}
-						sx={{ backgroundColor: "#000000", }}
+						maxWidth={"1250px"}
+						margin={"0 auto"} 
 					>
-						<Box
-							maxWidth={"1250px"}
-							margin={"0 auto"}
-
-						>
-							<Grid item xs={12} pb={10} >
-								<OurTeamCard />
-							</Grid>
-						</Box>
+						<Grid item xs={12} pb={10} >
+							<OurTeamCard color="#fff" />
+						</Grid>
 					</Box>
 				</Box>
 			</Grid>

@@ -19,6 +19,7 @@ export const CarouselNews: React.FC<Props> = ({ banners }) => {
     return (
         <Carousel
             {...DefaultSettingsT2}
+            indicators={false}
             navButtonsProps={{
                 style: {
                     backgroundColor: 'transparent',  

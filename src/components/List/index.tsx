@@ -3,8 +3,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
 import { Box } from '@mui/system';
 
 export default function CheckboxList() {
@@ -14,7 +12,7 @@ export default function CheckboxList() {
             component="section"
             sx={{ display: 'flex' }}
         >
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: '#000000' }}>
 
                 {items.map((value) =>
                     <ListItem
@@ -30,7 +28,7 @@ export default function CheckboxList() {
                     </ListItem>
                 )}
             </List>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <List sx={{ width: '100%', maxWidth: 360,  bgcolor: '#000000' }}>
 
                 {items2.map((value) =>
                     <ListItem

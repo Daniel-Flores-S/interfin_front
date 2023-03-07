@@ -17,8 +17,9 @@ interface Props {
 
 const CarouselSolutions: React.FC<Props> = ({ banners }) => {
     return (
-        <Carousel
+        <Carousel            
             {...DefaultSettingsT2}
+            indicators={false}
             navButtonsProps={{
                 style: { backgroundColor: 'transparent' }
             }}

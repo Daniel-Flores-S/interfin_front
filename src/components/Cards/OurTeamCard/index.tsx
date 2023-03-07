@@ -12,7 +12,7 @@ const OurTeamCard: FC<Props> = ({ margin, color }) => {
         <Grid
             xs={12}
             container
-            mt={margin ? margin : "5rem"}
+            p={3}
             display={'flex'}
             justifyContent={"center"}
         >

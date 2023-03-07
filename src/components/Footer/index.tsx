@@ -4,43 +4,41 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import Typography from "../Typography";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import Image from "next/image";
 import Divider from "@mui/material/Divider";
 import CheckboxList from "../List";
-import { Button } from "@mui/material";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+// @ icons
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 // Branch office
-function BranchesOffice() {
+function SocialNetworks() {
 	return (
 		<Box
-			display={"Block"}
-			sx={{ display: "flex", flexDirection: "column", alignItems: "center", }}
+			gap={2}
+			display="flex"
+			justifyContent="center"
+			alignItems="center"
 		>
-			<Box>
-				<Typography variant="body2" color="text.widget" align="center">
-					Matriz
-				</Typography>
-				<Typography variant="body2" color="text.widget" align="center">
-					Matriz: R. Maximiliano Fernandes 78 – Centro Vitória da Conquista – BA  –  CNPJ:42.979.043/0001-00
-				</Typography>
-			</Box>
-
-
-			<Box
-				display={"Block"}
+			<Link
+				target="_blank"
+				href="https://wa.me/557781165042"
 			>
-				{/* Filial */}
-				<Typography variant="body2" color="text.widget" align="center">
-					Filial
-				</Typography>
-				<Typography variant="body2" color="text.widget" align="center">
-					R. 7 de Setembro 8 – Centro – Jequié – BA  –  CNPJ:42.979.043/0002-91
-				</Typography>
-			</Box>
+				<WhatsAppIcon sx={{ color: '#ffc115' }} />
+			</Link>
+			<Link
+				target="_blank"
+				href="https://www.instagram.com/interfin.vitoriadaconquista/"
+			>
+				<InstagramIcon sx={{ color: '#ffc115' }} />
+			</Link>
+			<Link
+				target="_blank"
+				href="https://www.facebook.com/people/Elleve-Vitoria-da-Conquista-BA/100084598698393/"
+			>
+				<FacebookIcon sx={{ color: '#ffc115' }} />
+			</Link>
 		</Box>
 	)
 }
@@ -48,31 +46,38 @@ function BranchesOffice() {
 function Copyright() {
 	return (
 		<Box
-			// 	font-size: 16px;
-			// font-weight: 400;
-			// color: #fff;
-			color="text.widget"
-			fontSize={16}
+			fontSize={13}
 			fontWeight={400}
 			display={"flex"}
 			flexDirection={"column"}
-			alignItems={"center"}
-			
+			sx={{
+				color: '#dfe2e2',
+			}}
+			textAlign={{
+				xs: "center",
+				sm: "center",
+				md: "left",
+				lg: "left",
+			}}
+
 		>
 			<Link
 				color="inherit"
 				href="/"
-				sx={{ textDecoration: "none", }}
+				sx={{
+					textDecoration: "none",
+					marginBottom: 2,
+				}}
 			>
-				{/*INTERFIN INTERMEDIAÇÃO FINANCEIRA  LTDA */}
-				{`© ${new Date().getFullYear()} Interfin Intermediação Financeira LTDA`}
+				{`${new Date().getFullYear()} Interfin Intermediação Financeira LTDA © `}
 			</Link>
-			<Divider
-				orientation="vertical"
-				flexItem
-				sx={{ mx: 1, }}
-			/>
-			<BranchesOffice />
+			<Typography variant="inherit">
+				Matriz: Rua Maximiliano Fernandes 78 – Centro Vitória da<br /> Conquista – BA  –  CNPJ:42.979.043/0001-00
+			</Typography>
+			{/* <Typography variant="inherit">
+				Filial: Rua 7 de Setembro 8 – Centro – Jequié – BA  –  CNPJ:42.979.043/0002-91
+			</Typography> */}
+
 		</Box>
 	);
 }
@@ -81,161 +86,84 @@ export default function AppFooter() {
 	return (
 		<Box
 			component="footer"
-			bgcolor={"background.paper"}
+			bgcolor={"#000000"}
 			display={"flex"}
+			alignItems={"center"}
+			justifyContent={"center"}
+			pb={3}
 		>
-			<Container sx={{ my: 5, display: "flex", height: 400 }}>
-				<Grid container>
-					<Grid item xs={12} display="flex" alignItems={"center"}>
-						<Button
-							variant="outlined"
-							sx={{
-								border: '4px solid #00a857',
+			<Container sx={{
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				flexWrap: "wrap", 
+			}}>
+				<Grid
+					container
+					spacing={2}
+					pt={6} 
+				>
+					<Grid
+						item
+						xs={12}
+						gap={{
+							xs: 2,
+							sm: 0,
+							md: 0,
+							lg: 0,
+						}}
+						display="flex"
+						flexWrap={"wrap"}
+						alignItems={"center"}
+						justifyContent="space-around"
+					>
+						<img
+							src="/static/images/LogotipoInterfinPrincipal1.png"
+							alt="Logotipo Interfin"
+							style={{
 								maxWidth: '197px',
 								maxHeight: '183px',
-								color: "#ffffff",
-
-								borderRadius: "0",
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "flex-end",
 							}}
-						>
-							<Typography
-								variant="h6"
-								align="center"
-								color="text.primary"
-								gutterBottom
-
-								sx={{
-									color: '#fff',
-									fontSize: '16px',
-									fontWeight: '700',
-									letterSpacing: '-.89px',
-									lineHeight: '1.3',
-									textAlign: 'left',
-									padding: '20px 20px 0',
-
-								}}
-							>
-								Conheça os nossos serviços e
-								faça parte da Interfin, a melhor
-								opção para você!
-							</Typography>
-							<ArrowForwardIcon
-								sx={{
-									color: '#fff',
-									fontSize: '30px',
-									fontWeight: '700',
-									letterSpacing: '-.89px',
-									lineHeight: '1.3',
-									textAlign: 'left',
-									marginTop: '10px',
-								}}
-							/>
-
-
-						</Button>
+						/>
 						<CheckboxList />
+
 					</Grid>
 
 					<Divider
 						orientation="horizontal"
-						//flexItem
-						sx={{ width: "100%", }}
+						sx={{
+							width: "100%",
+							my: 2,
+							borderColor: "#ffc115",
+						}}
 					/>
+					<Grid
+						item
+						xs={12}
+						spacing={1}
+						display="flex"
+						justifyContent={{
+							xs: "center",
+							sm: "center",
+							md: "center",
+							lg: "space-between",
+						}}
+						alignItems="center"
+						flexWrap={"wrap"}
+						sx={{
+							minHeight: `50px`,
+							gap: {
+								xs: 2,
+								sm: 2,
+								md: 0,
+							},
+						}}
+					>
+						<Copyright />
+						<SocialNetworks />
+					</Grid>
 
-					<Grid item xs={12} display="flex" alignItems={"center"}>
-						<Image
-							src="/static/images/LogotipoInterfinPrincipal1.png"
-							alt="Logotipo Interfin"
-							width={100}
-							height={80}
-						/>
-						<Copyright />
-					</Grid>
-					{/* <Grid item xs={12} mb={3}>
-						<Typography
-							variant="subtitle1"
-							marked="center"
-							align="center"
-							gutterBottom
-						>
-							Siga nas redes sociais
-						</Typography>
-						<Box
-							gap={2}
-							display="flex"
-							justifyContent="center"
-							color={
-								"inherit"
-							}
-						>
-							<Link
-								target="_blank"
-								href="https://wa.me/557781165042"
-								color={
-									"inherit"
-								}
-								sx={{
-									"&:hover":
-									{
-										color: "primary.main",
-									},
-								}}
-							>
-								<WhatsAppIcon
-									sx={{
-										width: 25,
-										height: 25,
-									}}
-								/>
-							</Link>
-							<Link
-								target="_blank"
-								href="https://www.instagram.com/elleve.vitoriadaconquista/"
-								color={
-									"inherit"
-								}
-								sx={{
-									"&:hover":
-									{
-										color: "primary.main",
-									},
-								}}
-							>
-								<InstagramIcon
-									sx={{
-										width: 25,
-										height: 25,
-									}}
-								/>
-							</Link>
-							<Link
-								target="_blank"
-								href="https://www.facebook.com/people/Elleve-Vitoria-da-Conquista-BA/100084598698393/"
-								color={
-									"inherit"
-								}
-								sx={{
-									"&:hover":
-									{
-										color: "primary.main",
-									},
-								}}
-							>
-								<FacebookIcon
-									sx={{
-										width: 25,
-										height: 25,
-									}}
-								/>
-							</Link>
-						</Box>
-					</Grid>
-					<Grid item xs={12}>
-						<Copyright />
-					</Grid> */}
+
 				</Grid>
 			</Container>
 		</Box>

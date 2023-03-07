@@ -57,7 +57,13 @@ const App = (props: any) => {
 					getLayout(
 						<Component {...pageProps} />,
 					)}
-				{/* <ServiceWhatsApp /> */}
+				<ServiceWhatsApp />
+				<div
+					style={{
+						padding: '3px 0px',
+						backgroundColor: "#ffc115",
+					}}
+				/>
 				<Footer />
 			</ThemeProvider>
 		</CacheProvider>

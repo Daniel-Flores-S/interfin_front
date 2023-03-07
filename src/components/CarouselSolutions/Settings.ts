@@ -17,7 +17,7 @@ export interface SettingsT {
 export const DefaultSettingsT: SettingsT = {
     autoPlay: false,
     animation: "fade",
-    indicators: true,
+    indicators: false,
     duration: 500,
     navButtonsAlwaysVisible: false,
     navButtonsAlwaysInvisible: false,
@@ -27,7 +27,7 @@ export const DefaultSettingsT: SettingsT = {
 }
 export const DefaultSettingsT2: SettingsT = {
     animation: "fade",
-    autoPlay: true,
+    autoPlay: false,
     cycleNavigation: true,
     duration: 1000,
     fullHeightHover: true,
