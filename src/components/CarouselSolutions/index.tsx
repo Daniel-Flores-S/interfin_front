@@ -16,93 +16,73 @@ interface Props {
 }
 
 const CarouselSolutions: React.FC<Props> = ({ banners }) => {
+    const bannerChunks = banners.reduce(
+        (acc: PublicationType[][], banner: PublicationType, i: number) => {
+            const chunkIndex = Math.floor(i / 3);
+            if (!acc[chunkIndex]) {
+                acc[chunkIndex] = [];
+            }
+            acc[chunkIndex].push(banner);
+            return acc;
+        },
+        []
+    );
+
     return (
-        <Carousel            
+        <Carousel
             {...DefaultSettingsT2}
+            autoPlay={false}
             indicators={false}
             navButtonsProps={{
-                style: { backgroundColor: 'transparent' }
+                style: { backgroundColor: 'transparent' },
             }}
             NextIcon={
                 <ArrowForwardIosIcon
-                    style={{
+                    sx={{
                         color: '#c5c4c4',
                         fontSize: '2rem',
+                        // hover: {
+                        "&:hover": {
+                            color: '#000',
+                        },
                     }}
                 />
             }
             PrevIcon={
                 <ArrowBackIosNewIcon
-                    style={{
+                    sx={{
                         color: '#c5c4c4',
                         fontSize: '2rem',
+                        "&:hover": {
+                            color: '#000',
+                        },
                     }}
                 />
             }
         >
-            {
-                Array.isArray(banners) && banners.map((item, index: number) => {
-                    // exibindo 3 itens por vez
-                    return (
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={{ xs: 1, sm: 2, md: 4 }}
-                            sx={{
-                                padding: '2rem',
-                                width: '100%',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <ImgMediaCard
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={'/static/Carrossel/02.png'} />
-                            <ImgMediaCard
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={'/static/Carrossel/03.png'} />
-                            <ImgMediaCard
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={'/static/Carrossel/04.png'} />
-                        </Stack>
-                    )
-                })
-            }
-        </Carousel >
-    )
-}
-
-
-// const CarouselSolutions: React.FC<Props> = ({ banners }) => {
-//     return (
-//         <Carousel {...DefaultSettingsT2}>
-//             {
-//                 Array.isArray(banners) && banners.map((item, index: number) => {
-//                     return (
-//                         <ImgMediaCard 
-//                             key={index}
-//                             title={item.title}
-//                             summary={item.summary}
-//                             image_url={item.image_url} 
-//                         />
-//                     )
-//                 })
-//             }
-//         </Carousel >
-//     )
-// }
+            {bannerChunks.map((chunk, chunkIndex) => (
+                <Stack
+                    key={chunkIndex}
+                    direction={{ xs: 'column', sm: 'row' }}
+                    spacing={{ xs: 1, sm: 2, md: 4 }}
+                    sx={{
+                        padding: '2rem',
+                        width: '100%',
+                        justifyContent: 'center',
+                    }}
+                >
+                    {chunk.map((banner, index) => (
+                        <ImgMediaCard
+                            key={index}
+                            title={banner.title}
+                            summary={banner.summary}
+                            image_url={banner.image_url}
+                        />
+                    ))}
+                </Stack>
+            ))}
+        </Carousel>
+    );
+};
 
 export default CarouselSolutions;
-
-
-
-
-
-
-
-
-

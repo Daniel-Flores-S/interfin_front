@@ -18,7 +18,7 @@ export const DefaultSettingsT: SettingsT = {
     autoPlay: false,
     animation: "fade",
     indicators: false,
-    duration: 500,
+    duration: 1000,
     navButtonsAlwaysVisible: false,
     navButtonsAlwaysInvisible: false,
     cycleNavigation: true,

@@ -28,7 +28,7 @@ const Home: NextPage<Props> = ({ /*publication, recent, */banners }) => {
 		<Grid container xs={12}>
 			<Review
 				btnText={"Saiba mais"}
-				image="/static/Banners/home.jpeg"
+				image="/static/Banners/Banner1Desktop1.png"
 				title="Você sabia?"
 				subTitle="Para facilitar ainda mais o seu dia a dia temos um parceiro de peso conosco!"
 			/>

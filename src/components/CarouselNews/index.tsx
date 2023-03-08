@@ -8,75 +8,84 @@ import Stack from '@mui/material/Stack';
 
 // @Types
 import { PublicationType } from '../../data/@types/publication';
-import { DefaultSettingsT2 } from '../Carousel/Settings'; 
+import { DefaultSettingsT2 } from '../Carousel/Settings';
 import { ImgMedia } from '../ImgMedia';
 
 interface Props {
-    banners: PublicationType[];
+  banners: PublicationType[];
 }
 
 export const CarouselNews: React.FC<Props> = ({ banners }) => {
-    return (
-        <Carousel
-            {...DefaultSettingsT2}
-            indicators={false}
-            navButtonsProps={{
-                style: {
-                    backgroundColor: 'transparent',  
-                }
-            }}
-            NextIcon={
-                <ArrowForwardIosIcon
-                    style={{
-                        color: '#000000',
-                        fontSize: '2rem',
-                    }}
-                />
-            }
-            PrevIcon={
-                <ArrowBackIosNewIcon
-                    style={{
-                        color: '#000000',
-                        fontSize: '2rem',
-                    }}
-                />
-            }
+  const bannerChunks = banners.reduce(
+    (acc: PublicationType[][], banner: PublicationType, i: number) => {
+      const chunkIndex = Math.floor(i / 3);
+      if (!acc[chunkIndex]) {
+        acc[chunkIndex] = [];
+      }
+      acc[chunkIndex].push(banner);
+      return acc;
+    },
+    []
+  );
+
+
+  return (
+    <Carousel
+      {...DefaultSettingsT2}
+      indicators={false}
+      autoPlay={false}
+      navButtonsProps={{
+        style: {
+          backgroundColor: 'transparent',
+          color: '#c5c4c4',
+        },
+      }}
+      NextIcon={
+        <ArrowForwardIosIcon
+          sx={{
+            color: '#c5c4c4',
+            fontSize: '2rem',
+            "&:hover": {
+              color: '#000',
+            },
+          }}
+        />
+      }
+      PrevIcon={
+        <ArrowBackIosNewIcon
+          sx={{
+            color: '#c5c4c4',
+            fontSize: '2rem',
+            "&:hover": {
+              color: '#000',
+            },
+          }}
+        />
+      }
+    >
+      {bannerChunks.map((chunk, chunkIndex) => (
+        <Stack
+          key={chunkIndex}
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}
+          sx={{
+            padding: '2rem',
+            width: '100%',
+            justifyContent: 'center',
+          }}
         >
-            {
-                Array.isArray(banners) && banners.map((item, index: number) => {
-                    // exibindo 3 itens por vez
-                    return (
-                        <Stack
-                            key={index}
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={{ xs: 1, sm: 2, md: 4 }}
-                            sx={{
-                                padding: '2rem',
-                                width: '100%',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <ImgMedia
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={"/static/Banners/Banner1Mobile.png"} />
-                            <ImgMedia
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={"/static/Banners/Banner3.png"} />
-                            <ImgMedia
-                                key={index}
-                                title={item.title}
-                                summary={item.summary}
-                                image_url={"/static/Banners/Banner1Mobile.png"} />
-                        </Stack>
-                    )
-                })
-            }
-        </Carousel >
-    )
+          {chunk.map((banner, index) => (
+            <ImgMedia
+              key={index}
+              title={banner.title}
+              summary={banner.summary}
+              image_url={banner.image_url}
+            />
+          ))}
+        </Stack>
+      ))}
+    </Carousel>
+  )
 }
 
 
