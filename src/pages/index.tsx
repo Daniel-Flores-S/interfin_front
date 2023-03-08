@@ -11,11 +11,12 @@ import { Review } from "../components/Review";
 
 // @Utils
 import { patternDT } from "../utils/pattern";
-import GroupButtons from "../components/GroupButtons";
-import CarouselSolutions from "../components/CarouselSolutions";
-import { CarouselNews } from "../components/CarouselNews";
+import GroupButtons from "../components/GroupButtons"; 
 import Typography from "../components/Typography";
 import OurTeamCard from "../components/Cards/OurTeamCard";
+import CarouselSolutions from "../components/Carousel/CarouselSolutions";
+import { CarouselNews } from "../components/Carousel/CarouselNews";
+import { MultipleItems } from "../components/Carousel/MultipleItems";
 
 type Props = {
 	publication: PublicationType[],
@@ -84,7 +85,7 @@ const Home: NextPage<Props> = ({ /*publication, recent, */banners }) => {
 						>
 							Novidades
 						</Typography>
-						<CarouselNews banners={banners} />
+						<MultipleItems banners={banners} />
 					</Box>
 				</Box>
 				<Box

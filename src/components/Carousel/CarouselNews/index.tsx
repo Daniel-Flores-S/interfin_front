@@ -7,9 +7,9 @@ import Carousel from 'react-material-ui-carousel';
 import Stack from '@mui/material/Stack';
 
 // @Types
-import { PublicationType } from '../../data/@types/publication';
-import { DefaultSettingsT2 } from '../Carousel/Settings';
-import { ImgMedia } from '../ImgMedia';
+import { PublicationType } from '../../../data/@types/publication';
+import { DefaultSettingsT2 } from '../ExampleCarousel/Settings';
+import { ImgMedia } from '../../ImgMedia';
 
 interface Props {
   banners: PublicationType[];
@@ -33,6 +33,7 @@ export const CarouselNews: React.FC<Props> = ({ banners }) => {
     <Carousel
       {...DefaultSettingsT2}
       indicators={false}
+      animation="slide"
       autoPlay={false}
       navButtonsProps={{
         style: {

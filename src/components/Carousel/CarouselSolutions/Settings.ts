@@ -1,6 +1,3 @@
-/* eslint-disable */
-
-
 export interface SettingsT {
     autoPlay: boolean,
     animation: "fade" | "slide",
@@ -14,17 +11,7 @@ export interface SettingsT {
     [key: string]: any
 }
 
-export const DefaultSettingsT: SettingsT = {
-    autoPlay: false,
-    animation: "fade",
-    indicators: false,
-    duration: 1000,
-    navButtonsAlwaysVisible: false,
-    navButtonsAlwaysInvisible: false,
-    cycleNavigation: true,
-    fullHeightHover: true,
-    swipe: true
-}
+
 export const DefaultSettingsT2: SettingsT = {
     animation: "fade",
     autoPlay: false,

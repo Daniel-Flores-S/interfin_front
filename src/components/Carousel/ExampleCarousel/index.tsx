@@ -9,7 +9,7 @@ import { DefaultSettingsT2 } from './Settings';
 import { Card, CardMedia, Typography, Grid, } from '@mui/material';
 
 // @Types
-import { PublicationType } from '../../data/@types/publication';
+import { PublicationType } from '../../../data/@types/publication';
 
 
 
