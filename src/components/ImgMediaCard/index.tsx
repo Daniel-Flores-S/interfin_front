@@ -5,15 +5,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import { useRouter } from 'next/router';
 interface Props {
     title: string;
     summary: string;
     image_url: string;
+    id: number;
 }
 
 
-export const ImgMediaCard: React.FC<Props> = ({ /*title, summary, */image_url }) => {
+export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
+    const router = useRouter()
     return (
         <Card
             sx={{
@@ -41,16 +43,16 @@ export const ImgMediaCard: React.FC<Props> = ({ /*title, summary, */image_url })
                     sx={{
                         "display": "-webkit-box",
                         "-webkit-line-clamp": "3",
-                        "overflow": "hidden", 
+                        "overflow": "hidden",
                         "-webkit-box-orient": "vertical",
                     }}
                 >
-                    {cardText}
-                    {/* <div
+
+                    <div
                         dangerouslySetInnerHTML={{
                             __html: summary,
                         }}
-                    /> */}
+                    />
                 </Typography>
             </CardContent>
             <CardActions
@@ -64,6 +66,7 @@ export const ImgMediaCard: React.FC<Props> = ({ /*title, summary, */image_url })
                     size="small"
                     color='warning'
                     sx={{ color: '#242424' }}
+                    onClick={() => router.push(`/Publication/${id}`)}
                 >
                     Simular
                 </Button>
@@ -72,6 +75,7 @@ export const ImgMediaCard: React.FC<Props> = ({ /*title, summary, */image_url })
                     size="small"
                     color='warning'
                     sx={{ color: '#242424' }}
+                    onClick={() => router.push(`/Publication/${id}`)}
                 >
                     Saiba Mais
                 </Button>

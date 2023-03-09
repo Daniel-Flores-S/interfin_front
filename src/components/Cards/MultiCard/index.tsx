@@ -25,12 +25,16 @@ const MultiCard: React.FC<Props> = ({
             m={"0 auto"}
             p={"0 1rem"}
             borderRadius={"10px"}
-            bgcolor={"#ffffff"}
         >
-            <Card>
+            <Card
+                sx={{ 
+                    backgroundColor: "#ffffff",
+                }}
+            >
                 <CardContent
                     sx={{
                         display: "flex", mb: "1.6rem",
+                        backgroundColor: "#ffffff",
                     }}
                 >
                     <Box
@@ -41,9 +45,7 @@ const MultiCard: React.FC<Props> = ({
                         }}
                     >
                         <Box
-                            width={
-                                "100%"
-                            }
+                            width={"100%"}
                             flexDirection={
                                 "column"
                             }
@@ -114,12 +116,12 @@ const MultiCard: React.FC<Props> = ({
                             }
                             alt="Paella dish"
                             sx={{
-                                height: "300px",
+                                height: "350px",
                                 minWidth:
                                     "300px",
                                 width: {
                                     xs: "100%",
-                                    md: "50%",
+                                    md: "350px",
                                 },
                                 xs: "0px",
                                 md: "-60px 1.5rem 0px",

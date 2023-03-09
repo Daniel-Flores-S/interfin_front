@@ -32,6 +32,7 @@ export const MultipleItems: React.FC<Props> = ({ banners }) => {
         }}
       >
         <ImgMedia
+          id={Number(banner.id)}
           key={index}
           title={banner.title}
           summary={banner.summary}

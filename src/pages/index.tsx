@@ -14,8 +14,7 @@ import { patternDT } from "../utils/pattern";
 import GroupButtons from "../components/GroupButtons"; 
 import Typography from "../components/Typography";
 import OurTeamCard from "../components/Cards/OurTeamCard";
-import CarouselSolutions from "../components/Carousel/CarouselSolutions";
-import { CarouselNews } from "../components/Carousel/CarouselNews";
+import CarouselSolutions from "../components/Carousel/CarouselSolutions"; 
 import { MultipleItems } from "../components/Carousel/MultipleItems";
 
 type Props = {
@@ -24,7 +23,7 @@ type Props = {
 	banners: PublicationType[],
 }
 
-const Home: NextPage<Props> = ({ /*publication, recent, */banners }) => {
+const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
 	return (
 		<Grid container xs={12}>
 			<Review
@@ -68,7 +67,7 @@ const Home: NextPage<Props> = ({ /*publication, recent, */banners }) => {
 						>
 							Soluções Interfin
 						</Typography>
-						<CarouselSolutions banners={banners} />
+						<CarouselSolutions banners={recent} />
 					</Box>
 				</Box>
 				<Box bgcolor={'#ececec'}>

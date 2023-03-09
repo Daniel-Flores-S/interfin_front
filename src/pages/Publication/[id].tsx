@@ -15,12 +15,20 @@ type Props = {
 }
 const Publication: NextPage<Props> = ({ publication }) => {
 	return (
-		<Grid container>
+		<Grid
+			container 
+			sx={{ 
+				backgroundColor: "#ffffff",
+			}}
+		>
 			<GridContainer container sx={{ minHeight: "30vh", }} />
 			<Grid
 				item
 				xs={12}
-				sx={{ zIndex: "3" }}
+				sx={{
+					zIndex: "3",
+					backgroundColor: "#ffffff",
+				}} 
 			>
 				<MultiCard publication={publication} />
 			</Grid>

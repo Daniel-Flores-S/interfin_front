@@ -7,7 +7,7 @@ export const GridContainer = styled(Grid)(() => ({
     width: "100%",
     opacity: "1",
     background:
-        'url("/static/img/bg3.jpg") center top / cover transparent',
+        'url("/static/Banners/Banner1Desktop1.png") center top / cover transparent',
     boxShadow: "none",
     display: "grid",
     "::before": {

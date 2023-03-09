@@ -2,24 +2,18 @@ import React from 'react';
 import { ImgMediaCard } from '../../ImgMediaCard'; 
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import Stack from '@mui/material/Stack'; 
-import { PublicationType } from '../../../data/@types/publication';
+import Stack from '@mui/material/Stack';  
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { PropsSettings, responsive } from './Settings';
 
 
-interface Props {
-    banners: PublicationType[];
-}
 
-const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-};
 
-const CarouselSolutions: React.FC<Props> = ({ banners }) => {
+
+
+const CarouselSolutions: React.FC<PropsSettings> = ({ banners }) => {
     const items =
         banners.map((banner, index) => (
             <Stack
@@ -37,6 +31,7 @@ const CarouselSolutions: React.FC<Props> = ({ banners }) => {
                     title={banner.title}
                     summary={banner.summary}
                     image_url={banner.image_url}
+                    id={Number(banner.id)}
                 />
             </Stack>
         ))
