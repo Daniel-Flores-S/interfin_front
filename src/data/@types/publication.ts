@@ -5,6 +5,7 @@ export type PublicationType = {
 	createdAt?: string;
 	isBanners: boolean;
 	summary: string;
+	content: string;
 	status?: string;
 	video_url: string;
 	image_url: string;

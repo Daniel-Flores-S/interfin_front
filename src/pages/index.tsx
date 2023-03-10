@@ -11,11 +11,12 @@ import { Review } from "../components/Review";
 
 // @Utils
 import { patternDT } from "../utils/pattern";
-import GroupButtons from "../components/GroupButtons"; 
+import GroupButtons from "../components/GroupButtons";
 import Typography from "../components/Typography";
 import OurTeamCard from "../components/Cards/OurTeamCard";
-import CarouselSolutions from "../components/Carousel/CarouselSolutions"; 
+import CarouselSolutions from "../components/Carousel/CarouselSolutions";
 import { MultipleItems } from "../components/Carousel/MultipleItems";
+import { useEffect, useState } from "react";
 
 type Props = {
 	publication: PublicationType[],
@@ -23,12 +24,26 @@ type Props = {
 	banners: PublicationType[],
 }
 
-const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
+const Home: NextPage<Props> = ({ recent, banners }) => {
+	const [isLoading, setIsLoading] = useState(true);
+	const [loadedBanners, setLoadedBanners] = useState<PublicationType[]>([]);
+	const [loadedRecent, setLoadedRecent] = useState<PublicationType[]>([]);
+
+	useEffect(() => {
+		setLoadedBanners(banners || []);
+		setLoadedRecent(recent || []);
+		setIsLoading(false);
+	}, [banners, recent]);
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<Grid container xs={12}>
 			<Review
 				btnText={"Saiba mais"}
-				image="/static/Banners/Banner1Desktop1.png"
+				image="https://i.ibb.co/xXNJLX0/bannerprincipal1.png"
 				title="Você sabia?"
 				subTitle="Para facilitar ainda mais o seu dia a dia temos um parceiro de peso conosco!"
 			/>
@@ -67,7 +82,7 @@ const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
 						>
 							Soluções Interfin
 						</Typography>
-						<CarouselSolutions banners={recent} />
+						<CarouselSolutions banners={loadedBanners} />
 					</Box>
 				</Box>
 				<Box bgcolor={'#ececec'}>
@@ -84,7 +99,7 @@ const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
 						>
 							Novidades
 						</Typography>
-						<MultipleItems banners={banners} />
+						<MultipleItems banners={loadedRecent} />
 					</Box>
 				</Box>
 				<Box
@@ -99,7 +114,7 @@ const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
 				>
 					<Box
 						maxWidth={"1250px"}
-						margin={"0 auto"} 
+						margin={"0 auto"}
 					>
 						<Grid item xs={12} pb={10} >
 							<OurTeamCard color="#fff" />
@@ -114,19 +129,12 @@ const Home: NextPage<Props> = ({ /*publication,*/ recent, banners }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const [publication, banners, recent] = await Promise.all([
-		getAllPublications(), getAllBanners(), getAllRecent()
-	])
-
-
+	const [banners, recent] = await Promise.all([getAllBanners(), getAllRecent()])
 
 	return {
 		props: {
-			publication: publication?.content ?? patternDT,
-			banners: banners,
-			recent: recent,
-			// banners: banner,
-			// recent: recentPb,
+			banners: banners || [],
+			recent: recent || [],
 
 		},
 	};

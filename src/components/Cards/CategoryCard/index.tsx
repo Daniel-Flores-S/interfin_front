@@ -15,7 +15,7 @@ type Props = {
 }
 
 const CategoryCard: React.FC<Props> = ({ publication }) => {
-	const { title, createdAt, id, user, image_url, category } = publication;
+	const { title, summary, id, user, image_url, category } = publication;
 	return (
 		<Card
 			sx={{
@@ -36,7 +36,7 @@ const CategoryCard: React.FC<Props> = ({ publication }) => {
 					component="img"
 					height="300"
 					image={image_url}
-					alt="Paella dish"
+					alt={title}
 				/>
 			</Link>
 			<CardContent>
@@ -49,35 +49,36 @@ const CategoryCard: React.FC<Props> = ({ publication }) => {
 						<Chip
 							size="small"
 							label={category}
-							color="primary"
+							color="warning"
+							sx={{
+								color: "rgb(0, 0, 0)",
+								fontWeight: "500",
+							}}
 						/>
 					</Grid>
-					<Typography
+					{/* <Typography
 						variant="body2"
 						component={"p"}
 					>
 						{user}
 						- {createdAt ? moment(createdAt).format("MM-YYYY") : ""}
-					</Typography>
+					</Typography> */}
 					<Link
 						href={`/Publication/${id}`}
 						style={{
 							justifyContent: 'center'
 						}}
 					>
-						<Typography
-							variant="h5"
-							component="h3"
-							style={{
-								whiteSpace: "nowrap",
-								overflow: "hidden",
-								textOverflow: "ellipsis",
+						<Typography variant="body2" color="text.secondary"
+							sx={{
+								"display": "-webkit-box",
+								"-webkit-line-clamp": "3",
+								"overflow": "hidden",
+								"-webkit-box-orient": "vertical",
 							}}
-							color="initial"
 						>
-							{title}
+							{summary}
 						</Typography>
-
 					</Link>
 				</Grid>
 			</CardContent>

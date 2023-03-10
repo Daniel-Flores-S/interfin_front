@@ -48,11 +48,7 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
                     }}
                 >
 
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html: summary,
-                        }}
-                    />
+                      {summary }
                 </Typography>
             </CardContent>
             <CardActions

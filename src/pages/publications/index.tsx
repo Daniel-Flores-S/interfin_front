@@ -83,8 +83,9 @@ const Publications: NextPage<Props> = ({ publication }) => {
 									>
 
 										<Button
-											variant="outlined"
+											variant="contained"
 											size="medium"
+											color="warning"
 											sx={{ height: "40px", }}
 										>
 											Saiba mais
@@ -124,5 +125,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
 		props: {
 			publication: res ?? [],
 		},
-	};
+	}
 };

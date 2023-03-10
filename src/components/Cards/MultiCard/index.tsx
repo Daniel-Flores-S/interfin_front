@@ -27,7 +27,7 @@ const MultiCard: React.FC<Props> = ({
             borderRadius={"10px"}
         >
             <Card
-                sx={{ 
+                sx={{
                     backgroundColor: "#ffffff",
                 }}
             >
@@ -46,9 +46,7 @@ const MultiCard: React.FC<Props> = ({
                     >
                         <Box
                             width={"100%"}
-                            flexDirection={
-                                "column"
-                            }
+                            flexDirection={"column"}
                             m={"0 auto"}
                             mb={4}
                         >
@@ -57,11 +55,9 @@ const MultiCard: React.FC<Props> = ({
                                 color="#262626"
                                 sx={{ mb: "1rem" }}
                             >
-                                {
-                                    publication.title
-                                }
+                                {publication.title}
                             </Typography>
-                            <Box
+                            {/* <Box
                                 component="div"
                                 color="primary.contrastTitle"
                                 display={
@@ -107,7 +103,7 @@ const MultiCard: React.FC<Props> = ({
                                             : ""}
                                     </Typography>
                                 </Box>
-                            </Box>
+                            </Box> */}
                         </Box>
                         <CardMedia
                             component="img"
@@ -125,10 +121,10 @@ const MultiCard: React.FC<Props> = ({
                                 },
                                 xs: "0px",
                                 md: "-60px 1.5rem 0px",
-                                float: "right",
+                                float: "left",
                                 objectFit:
                                     "cover",
-                                ml: 4,
+                                mr: 4,
                                 mb: 4,
                                 borderRadius:
                                     "10px",
@@ -147,7 +143,7 @@ const MultiCard: React.FC<Props> = ({
                                 >
                                     <div
                                         dangerouslySetInnerHTML={{
-                                            __html: publication?.summary,
+                                            __html: publication?.content,
                                         }}
                                     />
                                 </React.Suspense>

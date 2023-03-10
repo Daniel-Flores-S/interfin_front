@@ -19,7 +19,7 @@ export const ItemsPage = [
 	{
 		icon: <CategoryIcon />,
 		label: "Simulador",
-		url: "/categories",
+		url: "/",
 	}, 
 	{
 		icon: <SlowMotionVideoIcon />,

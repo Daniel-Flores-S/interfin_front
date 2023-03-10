@@ -8,7 +8,6 @@ import { Box, Card, CardContent, CardMedia, Grid, Typography, } from "@mui/mater
 
 // @Components
 import { GridContainer } from "../../components/GridContainer";
-import OurTeamCard from "../../components/Cards/OurTeamCard";
 
 
 const About: NextPage = () => {
@@ -16,9 +15,7 @@ const About: NextPage = () => {
 		<Grid container>
 			<GridContainer
 				container
-				sx={{
-					minHeight: "30vh",
-				}}
+				sx={{ minHeight: "30vh" }}
 			/>
 			<Grid
 				item
@@ -31,21 +28,14 @@ const About: NextPage = () => {
 			>
 				<Box
 					sx={{
-						background:
-							"#ffffff",
-						borderRadius:
-							"10px",
+						background: "#ffffff",
+						borderRadius: "10px",
 						width: "100%",
-						paddingRight:
-							"15px",
-						paddingLeft:
-							"15px",
-						marginRight:
-							"auto",
-						marginLeft:
-							"auto",
-						minHeight:
-							"160vh",
+						paddingRight: "15px",
+						paddingLeft: "15px",
+						marginRight: "auto",
+						marginLeft: "auto",
+						minHeight: "95vh",
 					}}
 				>
 					<Box
@@ -59,7 +49,7 @@ const About: NextPage = () => {
 						bgcolor={"#ffffff"}
 						mb={4}
 					>
-						<Card >
+						<Card sx={{ background: "#ffffff" }} >
 							<CardContent sx={{
 								display: "flex",
 								mb: '1.6rem',
@@ -80,14 +70,14 @@ const About: NextPage = () => {
 
 									<CardMedia
 										component="img"
-										src={"/static/drawkit-illustration1.svg"}
-										alt="Paella dish"
+										src={"/static/2Logotipo-PNG/Isologo/Principal.png"}
+										alt="Interfin logo principal"
 										sx={{
-											height: "400px",
-											minWidth: '300px',
+											height: "400",
+											minWidth: '100px',
 											width: {
 												xs: "100%",
-												md: "50%",
+												md: "30%",
 											},
 											xs: "0px",
 											md: "-60px 1.5rem 0px",
@@ -96,7 +86,7 @@ const About: NextPage = () => {
 											ml: 4,
 											mb: 4,
 											borderRadius: "10px",
-											border: "1px solid rgb(235, 235, 235)",
+											//border: "1px solid rgb(235, 235, 235)",
 											filter: "none",
 
 										}}
@@ -133,7 +123,7 @@ const About: NextPage = () => {
 										problemas de negócios on-line e estratégias de marketing digital que<br />
 										conectam você ao cliente ideal e ajudam a criar um cliente leal.<br />
 									</Typography>
-									<Grid
+									{/* <Grid
 										container
 										xs={12}
 										textAlign={{
@@ -172,12 +162,11 @@ const About: NextPage = () => {
 												Uma vez que o site está hospedado e tem um domínio, ele estará disponível para ser acessado pelos usuários na internet. No entanto, é importante lembrar de continuar mantendo e atualizando o site para garantir que ele esteja sempre funcionando corretamente e fornecendo a melhor experiência possível para os usuários.
 											</Typography>
 										</Grid>
-									</Grid>
+									</Grid> */}
 								</Box>
 							</CardContent>
 						</Card>
 					</Box>
-					<OurTeamCard margin={"0"} />
 				</Box>
 			</Grid>
 		</Grid >

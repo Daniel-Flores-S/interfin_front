@@ -52,7 +52,7 @@ const styles = ({
 			1,
 		)} auto 0`,
 		backgroundColor:
-			theme.palette.secondary
+			theme.palette.warning
 				.main,
 	},
 	[`& .${markClassesMapping.center.h3}`]:
@@ -61,7 +61,7 @@ const styles = ({
 		width: 55,
 		display: "block",
 		margin: `${theme.spacing( 1, )} auto 0`,
-		backgroundColor: theme.palette.secondary.main,
+		backgroundColor: theme.palette.warning.main,
 	},
 	[`& .${markClassesMapping.center.h4}`]:
 	{
@@ -71,7 +71,7 @@ const styles = ({
 		margin: `${theme.spacing(
 			1,
 		)} auto 0`,
-		backgroundColor: theme.palette.secondary.main,
+		backgroundColor: theme.palette.warning.main,
 	},
 	[`& .${markClassesMapping.left.h6}`]:
 	{
@@ -79,7 +79,7 @@ const styles = ({
 		width: 28,
 		display: "block",
 		marginTop: theme.spacing(0.5),
-		backgroundColor: theme.palette.secondary.main,
+		backgroundColor: theme.palette.warning.main,
 	},
 });
 
