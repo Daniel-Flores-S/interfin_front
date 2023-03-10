@@ -74,6 +74,11 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 					<Toolbar
 						sx={{
 							alignItems: "center",
+							justifyContent: {
+								xs: "space-between",
+								sm: "start",
+
+							}
 							//transform: scrollY === 0 ? "translateY(20px)" : "translateY(0px)"
 							//transform:  "translateY(20px)"
 						}}
@@ -107,7 +112,7 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 								/>
 							</Link>
 						</Box>
-						<Box display={{ sm: 'none' }} />
+						<Box display={{ xs: 'block', sm: 'none' }} />
 						<Box
 							sx={{
 								display: { xs: 'none', sm: 'block' },
