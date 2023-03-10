@@ -14,7 +14,7 @@ interface Props {
 }
 
 
-export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
+export const ImgMediaCard: React.FC<Props> = ({ id, summary, image_url, title }) => {
     const router = useRouter()
     return (
         <Card
@@ -36,7 +36,8 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
             />
             <CardContent
                 sx={{
-                    padding: '20px 0px'
+                    padding: '20px 0px',
+
                 }}
             >
                 <Typography variant="body2" color="text.secondary"
@@ -45,10 +46,11 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
                         "-webkit-line-clamp": "3",
                         "overflow": "hidden",
                         "-webkit-box-orient": "vertical",
+                        minHeight: '67px',
                     }}
                 >
 
-                      {summary }
+                    {summary}
                 </Typography>
             </CardContent>
             <CardActions
@@ -64,7 +66,10 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
                     sx={{ color: '#242424' }}
                     onClick={() => router.push(`/Publication/${id}`)}
                 >
-                    Simular
+                    {title === 'Crédito Pessoal: Empréstimo no carnê parcelado em até 18x.'
+                        ? 'Simular' : 'Solicitar'
+                    }
+
                 </Button>
                 <Button
                     variant='text'
@@ -80,7 +85,7 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
     );
 }
 
- 
+
 
 
 
