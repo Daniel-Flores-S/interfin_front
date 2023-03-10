@@ -80,8 +80,7 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary,  image_url }) => {
     );
 }
 
-const cardText = 'Em busca de uma solução financeira eficiente e rápida? Conheça o empréstimo com garantia de veículo! Esse tipo de crédito é destinado a clientes que possuem veículos aptos para financiamento e oferece até 85% do valor da tabela <strong>FIPE</strong>. Além disso, o prazo para pagamento pode chegar até 60 meses, oferecendo mais flexibilidade e comodidade. </p><p><br></p'
-
+ 
 
 
 

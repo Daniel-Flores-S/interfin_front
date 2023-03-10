@@ -10,7 +10,6 @@ import { getAllBanners, getAllPublications, getAllRecent } from "../store/api/pu
 import { Review } from "../components/Review";
 
 // @Utils
-import { patternDT } from "../utils/pattern";
 import GroupButtons from "../components/GroupButtons";
 import Typography from "../components/Typography";
 import OurTeamCard from "../components/Cards/OurTeamCard";
@@ -24,21 +23,18 @@ type Props = {
 	banners: PublicationType[],
 }
 
-const Home: NextPage<Props> = ({ recent, banners }) => {
-	const [isLoading, setIsLoading] = useState(true);
+const Home: NextPage<Props> = ({ recent, banners }) => { 
 	const [loadedBanners, setLoadedBanners] = useState<PublicationType[]>([]);
-	const [loadedRecent, setLoadedRecent] = useState<PublicationType[]>([]);
+	const [loadedRecent, setLoadedRecent] =  useState<PublicationType[]>([]);
 
 	useEffect(() => {
 		setLoadedBanners(banners || []);
-		setLoadedRecent(recent || []);
-		setIsLoading(false);
+		setLoadedRecent(recent || []); 
 	}, [banners, recent]);
 
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
-
+	// if (isLoading) {
+	// 	return <div>Loading...</div>;
+	// }
 	return (
 		<Grid container xs={12}>
 			<Review
@@ -129,12 +125,14 @@ const Home: NextPage<Props> = ({ recent, banners }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const [banners, recent] = await Promise.all([getAllBanners(), getAllRecent()])
+	const [banners, recent] = await Promise.all([
+		getAllBanners(), getAllRecent()
+	])
 
 	return {
 		props: {
-			banners: banners || [],
-			recent: recent || [],
+			banners: banners,
+			recent: recent,
 
 		},
 	};
