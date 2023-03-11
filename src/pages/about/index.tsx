@@ -71,7 +71,7 @@ const About: NextPage = () => {
 									<CardMedia
 										component="img"
 										//src={"/static/2Logotipo-PNG/Isologo/Principal.png"}
-										src="/static/svg/LOGO.svg"
+										src="/static/drawkit-illustration1.svg"
 										alt="Interfin logo principal"
 										sx={{
 											height: "400",
@@ -86,8 +86,7 @@ const About: NextPage = () => {
 											objectFit: "cover",
 											ml: 4,
 											mb: 4,
-											borderRadius: "10px",
-											//border: "1px solid rgb(235, 235, 235)",
+											borderRadius: "10px", 
 											filter: "none",
 
 										}}
