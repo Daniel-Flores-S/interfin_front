@@ -64,8 +64,7 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 			>
 				<Container
 					maxWidth="xl"
-					sx={{
-						//height: `${scrollY === 0  ? '40px' : '50px'} !important`,
+					sx={{ 
 						height: `45px !important`,
 						width: "90%",
 						maxWidth: "1600px !important",
@@ -80,9 +79,7 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 								xs: "space-between",
 								sm: "start",
 
-							}
-							//transform: scrollY === 0 ? "translateY(20px)" : "translateY(0px)"
-							//transform:  "translateY(20px)"
+							} 
 						}}
 						disableGutters
 					>

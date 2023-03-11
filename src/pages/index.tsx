@@ -128,18 +128,10 @@ const Home: NextPage<Props> = ({ recent, banners }) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
-	// esperar 5 segundos
-	await new Promise((resolve) => setTimeout(resolve, 5000));
+export const getServerSideProps: GetServerSideProps = async () => { 
 	const [banners, recent] = await Promise.all([
 		getAllBanners(), getAllRecent()
-	])
-
-	if (!banners || !recent) {
-		return {
-			notFound: true,
-		};
-	}
+	]) 
 
 	return {
 		props: {
@@ -147,14 +139,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 			recent: recent,
 
 		},
-	};
-
-	// return {
-	// 	props: {
-	// 		banners: banners,
-	// 		recent: recent,
-
-	// 	},
-	// };
+	}; 
 };
 
