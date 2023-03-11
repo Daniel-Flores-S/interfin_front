@@ -16,6 +16,7 @@ import OurTeamCard from "../components/Cards/OurTeamCard";
 import CarouselSolutions from "../components/Carousel/CarouselSolutions";
 import { MultipleItems } from "../components/Carousel/MultipleItems";
 import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 type Props = {
 	publication: PublicationType[],
@@ -24,17 +25,20 @@ type Props = {
 }
 
 const Home: NextPage<Props> = ({ recent, banners }) => { 
+	const [isLoading, setIsLoading] = useState(true);
 	const [loadedBanners, setLoadedBanners] = useState<PublicationType[]>([]);
 	const [loadedRecent, setLoadedRecent] =  useState<PublicationType[]>([]);
 
 	useEffect(() => {
 		setLoadedBanners(banners || []);
 		setLoadedRecent(recent || []); 
+		setIsLoading(false);
+
 	}, [banners, recent]);
 
-	// if (isLoading) {
-	// 	return <div>Loading...</div>;
-	// }
+	if (isLoading) {
+		return <Loader loading={isLoading} />;
+	}
 	return (
 		<Grid container xs={12}>
 			<Review
@@ -125,6 +129,8 @@ const Home: NextPage<Props> = ({ recent, banners }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
+	// esperar 5 segundos
+	await new Promise((resolve) => setTimeout(resolve, 5000));
 	const [banners, recent] = await Promise.all([
 		getAllBanners(), getAllRecent()
 	])

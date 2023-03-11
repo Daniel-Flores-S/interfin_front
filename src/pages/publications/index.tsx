@@ -78,9 +78,9 @@ const Publications: NextPage<Props> = ({ publication }) => {
 									>
 										{item?.category?.name}
 									</Typography>
-									<Link
+									{/* <Link
 										href={`/publications/category/${item?.category?.id}`}
-									>
+									> */}
 
 										<Button
 											variant="contained"
@@ -90,7 +90,7 @@ const Publications: NextPage<Props> = ({ publication }) => {
 										>
 											Saiba mais
 										</Button>
-									</Link>
+									{/* </Link> */}
 								</Grid>
 								{item?.publications?.map((item, key) => {
 									return (
