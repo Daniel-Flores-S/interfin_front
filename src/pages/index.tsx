@@ -135,6 +135,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
 		getAllBanners(), getAllRecent()
 	])
 
+	if (!banners || !recent) {
+		return {
+			notFound: true,
+		};
+	}
+
 	return {
 		props: {
 			banners: banners,
@@ -142,5 +148,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 		},
 	};
+
+	// return {
+	// 	props: {
+	// 		banners: banners,
+	// 		recent: recent,
+
+	// 	},
+	// };
 };
 

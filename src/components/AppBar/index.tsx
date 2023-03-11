@@ -10,6 +10,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
+import { useRouter } from 'next/router';
 
 // @Utils
 import * as UT from './utils';
@@ -19,6 +20,7 @@ import { drawer } from './drawer';
 
 
 const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
+	const router = useRouter()
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [scrollY, setScrollY] = useState(0);
 
@@ -100,17 +102,16 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 						</IconButton>
 
 						<Box>
-							<Link href={`/`}>
-								<Image
-									src={"/static/2Logotipo-PNG/VersaoHorizontal/Horizontal-Principal1.png"}
-									alt="logo"
-									width={130}
-									height={40}
-									style={{
-										cursor: "pointer",
-									}}
-								/>
-							</Link>
+							<Image
+								onClick={() => router.push(`/`)}
+								src={"/static/2Logotipo-PNG/VersaoHorizontal/Horizontal-Principal1.png"}
+								alt="logo"
+								width={130}
+								height={40}
+								style={{
+									cursor: "pointer",
+								}}
+							/>
 						</Box>
 						<Box display={{ xs: 'block', sm: 'none' }} />
 						<Box
@@ -126,7 +127,7 @@ const AppBarMenu: FC<UT.AppBarProps> = ({ windowApp }) => {
 						>
 							{UT.ItemsPage.map((item, key) => (
 								<Link href={`${item.url}`} key={key}>
-									<Button										
+									<Button
 										color="warning"
 										sx={{
 											color: "white",

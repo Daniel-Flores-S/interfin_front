@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // @moment
 import 'moment/locale/pt-br'
 import moment from "moment";
+import Router from 'next/router';
 
 // @Theme and Utils
 import { theme } from "../theme";
@@ -19,6 +20,7 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import ServiceWhatsApp from "../components/ServiceWhatsApp";
 import AppBarMenu from "../components/AppBar";
+import Loader from "../components/Loader";
 
 moment.locale('pt-br')
 
@@ -26,6 +28,16 @@ const clientSideEmotionCache = createEmotionCache();
 
 
 const App = (props: any) => {
+
+	const [loading, setLoading] = useState(false);
+
+	Router.events.on('routeChangeStart', () => setLoading(true));
+	Router.events.on('routeChangeComplete', () => setLoading(false));
+	Router.events.on('routeChangeError', () => setLoading(false));
+
+	
+
+
 	const {
 		Component,
 		emotionCache = clientSideEmotionCache,
@@ -49,6 +61,7 @@ const App = (props: any) => {
 
 	return (
 		<CacheProvider value={emotionCache}>
+			{loading && <Loader loading={loading} />}
 			<HeadComponent title={"Interfin"} />
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
