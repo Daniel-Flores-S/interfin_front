@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
+import { Link } from '@mui/material';
 interface Props {
     title: string;
     summary: string;
@@ -16,6 +17,7 @@ interface Props {
 
 export const ImgMediaCard: React.FC<Props> = ({ id, summary, image_url, title }) => {
     const router = useRouter()
+     console.log(title === 'Crédito Pessoal: Empréstimo no carnê parcelado em até 18x. ') 
     return (
         <Card
             sx={{
@@ -59,18 +61,27 @@ export const ImgMediaCard: React.FC<Props> = ({ id, summary, image_url, title })
                     justifyContent: 'center',
                 }}
             >
-                <Button
-                    variant='contained'
-                    size="small"
-                    color='warning'
-                    sx={{ color: '#242424' }}
-                    onClick={() => router.push(`/Publication/${id}`)}
+                <Link
+                    target="_blank"
+                    href="https://api.whatsapp.com/send/?phone=557781165042"
+                    sx={{
+                        textDecoration: 'none',
+                    }}
                 >
-                    {title === 'Crédito Pessoal: Empréstimo no carnê parcelado em até 18x.'
-                        ? 'Simular' : 'Solicitar'
-                    }
+                    <Button
+                        variant='contained'
+                        size="small"
+                        color='warning'
+                        sx={{ color: '#242424' }}
+                        //onClick={() => router.push(`/Publication/${id}`)}
+                    >
+                       
+                        {title === 'Crédito Pessoal: Empréstimo no carnê parcelado em até 18x.'
+                            ? 'Simular' : 'Solicitar'
+                        }
 
-                </Button>
+                    </Button>
+                </Link>
                 <Button
                     variant='text'
                     size="small"

@@ -70,7 +70,8 @@ const About: NextPage = () => {
 
 									<CardMedia
 										component="img"
-										src={"/static/2Logotipo-PNG/Isologo/Principal.png"}
+										//src={"/static/2Logotipo-PNG/Isologo/Principal.png"}
+										src="/static/svg/LOGO.svg"
 										alt="Interfin logo principal"
 										sx={{
 											height: "400",

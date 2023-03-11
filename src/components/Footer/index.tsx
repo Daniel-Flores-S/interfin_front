@@ -23,13 +23,13 @@ function SocialNetworks() {
 		>
 			<Link
 				target="_blank"
-				href="https://wa.me/557781165042"
+				href="https://api.whatsapp.com/send/?phone=557781165042"
 			>
 				<WhatsAppIcon sx={{ color: '#ffc115' }} />
 			</Link>
 			<Link
 				target="_blank"
-				href="https://www.instagram.com/interfin.vitoriadaconquista/"
+				href="https://www.instagram.com/interfinoficial/"
 			>
 				<InstagramIcon sx={{ color: '#ffc115' }} />
 			</Link>
