@@ -25,20 +25,20 @@ type Props = {
 }
 
 const Home: NextPage<Props> = ({ recent, banners }) => { 
-	const [isLoading, setIsLoading] = useState(true);
+	//const [isLoading, setIsLoading] = useState(true);
 	const [loadedBanners, setLoadedBanners] = useState<PublicationType[]>([]);
 	const [loadedRecent, setLoadedRecent] =  useState<PublicationType[]>([]);
 
 	useEffect(() => {
 		setLoadedBanners(banners || []);
 		setLoadedRecent(recent || []); 
-		setIsLoading(false);
+		//setIsLoading(false);
 
 	}, [banners, recent]);
 
-	if (isLoading) {
-		return <Loader loading={isLoading} />;
-	}
+	// if (isLoading) {
+	// 	return <Loader loading={isLoading} />;
+	// }
 	return (
 		<Grid container xs={12}>
 			<Review
