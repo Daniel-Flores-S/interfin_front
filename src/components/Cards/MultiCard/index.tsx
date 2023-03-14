@@ -125,7 +125,7 @@ const MultiCard: React.FC<Props> = ({
                                 objectFit:
                                     "cover",
                                 mr: 4,
-                                mb: 4,
+                                mb: 4,                                
                                 borderRadius:
                                     "10px",
                                 border: "1px solid rgb(235, 235, 235)",
@@ -142,6 +142,9 @@ const MultiCard: React.FC<Props> = ({
                                     }
                                 >
                                     <div
+                                        style={{
+                                            textAlign: "justify",
+                                        }}
                                         dangerouslySetInnerHTML={{
                                             __html: publication?.content,
                                         }}
